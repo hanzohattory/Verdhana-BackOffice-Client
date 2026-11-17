@@ -1,0 +1,17 @@
+__history/
+__recovery/
+*.dcu
+*.identcache
+*.local
+*.stat
+*.dsk
+*.~*
+*.bak
+*.orig
+Output/
+Win64/
+Win32/
+
+
+# Hasil build situs dokumentasi teknis (docs/technical/_tools/site/build_site.py)
+docs/technical/_build/
