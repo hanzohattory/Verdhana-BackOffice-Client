@@ -1,0 +1,28 @@
+MAINICON ICON "C:\\Work\\Nayaga\\04. Nayaga Client\\mainicon.ico"
+1 VERSIONINFO
+FILEVERSION 1,0,0,4
+PRODUCTVERSION 1,0,0,4
+FILEFLAGSMASK 0x3FL
+FILEFLAGS 0x00L
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x00L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+         BLOCK "380904E4"
+         BEGIN
+              VALUE "CompanyName", "PT. Kalacakra Teknologi\0"
+              VALUE "FileDescription", "Nayaga Client Application\0"
+              VALUE "FileVersion", "1.0.0.4\0"
+              VALUE "LegalCopyright", "Copyright © 2013-2017 Cakra-Tech\0"
+              VALUE "ProductName", "Nayaga iBanking System\0"
+              VALUE "ProductVersion", "1.0.0.4\0"
+              VALUE "CompileDate", "Thursday, March 9, 2017 8:17 PM\0"
+         END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+         VALUE "Translation", 0x3809, 1252
+    END
+END

@@ -1,0 +1,1876 @@
+inherited frmContractBonds: TfrmContractBonds
+  Caption = 'Contract Bonds'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited grdMaster: TcxGrid
+    Top = 73
+    Height = 395
+    ExplicitTop = 73
+    ExplicitHeight = 395
+    inherited gvwMaster: TcxGridDBBandedTableView
+      object gvwMasterCONBONID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'CONBONID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 0
+        Position.RowIndex = 0
+      end
+      object gvwMasterTRADEBOND_ID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'TRADEBOND_ID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 1
+        Position.RowIndex = 0
+      end
+      object gvwMasterCONDATE: TcxGridDBBandedColumn
+        Caption = 'Contract Date'
+        DataBinding.FieldName = 'CONDATE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 2
+        Position.RowIndex = 0
+      end
+      object gvwMasterINSTRUMENT_ID: TcxGridDBBandedColumn
+        Caption = 'Instrument ID'
+        DataBinding.FieldName = 'INSTRUMENT_ID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 3
+        Position.RowIndex = 0
+      end
+      object gvwMasterINSTRUMENT_CODE: TcxGridDBBandedColumn
+        Caption = 'Instrument Code'
+        DataBinding.FieldName = 'INSTRUMENT_CODE'
+        Width = 137
+        Position.BandIndex = 0
+        Position.ColIndex = 6
+        Position.RowIndex = 0
+      end
+      object gvwMasterFACEVALUE: TcxGridDBBandedColumn
+        Caption = 'Face Value'
+        DataBinding.FieldName = 'FACEVALUE'
+        HeaderAlignmentHorz = taRightJustify
+        Width = 103
+        Position.BandIndex = 0
+        Position.ColIndex = 8
+        Position.RowIndex = 0
+      end
+      object gvwMasterDUEDATE: TcxGridDBBandedColumn
+        Caption = 'Due Date'
+        DataBinding.FieldName = 'DUEDATE'
+        Position.BandIndex = 0
+        Position.ColIndex = 7
+        Position.RowIndex = 0
+      end
+      object gvwMasterMODDA: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'MODDA'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 9
+        Position.RowIndex = 0
+      end
+      object gvwMasterMODUI: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'MODUI'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 10
+        Position.RowIndex = 0
+      end
+      object gvwMasterAPPDA: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'APPDA'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 11
+        Position.RowIndex = 0
+      end
+      object gvwMasterAPPUI: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'APPUI'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 12
+        Position.RowIndex = 0
+      end
+      object gvwMasterID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'ID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 13
+        Position.RowIndex = 0
+      end
+      object gvwMasterSTAT: TcxGridDBBandedColumn
+        Caption = 'Status'
+        DataBinding.FieldName = 'STAT'
+        PropertiesClassName = 'TcxImageComboBoxProperties'
+        Properties.Items = <
+          item
+            Description = 'Open'
+            ImageIndex = 0
+            Value = 'O'
+          end
+          item
+            Description = 'Close'
+            Value = 'S'
+          end
+          item
+            Description = 'Reverse'
+            Value = 'R'
+          end
+          item
+            Description = 'Cancel'
+            Value = 'C'
+          end>
+        FooterAlignmentHorz = taCenter
+        GroupSummaryAlignment = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 35
+        Position.BandIndex = 0
+        Position.ColIndex = 4
+        Position.RowIndex = 0
+      end
+      object gvwMasterCTPREFF: TcxGridDBBandedColumn
+        Caption = 'CTP Reff'
+        DataBinding.FieldName = 'CTPREFF'
+        Visible = False
+        Width = 61
+        Position.BandIndex = 0
+        Position.ColIndex = 14
+        Position.RowIndex = 0
+      end
+      object gvwMasterCTP_UPD: TcxGridDBBandedColumn
+        Caption = 'CTP Updated'
+        DataBinding.FieldName = 'CTP_UPD'
+        PropertiesClassName = 'TcxCheckBoxProperties'
+        Properties.NullStyle = nssUnchecked
+        Properties.ValueChecked = '1'
+        Properties.ValueUnchecked = '0'
+        FooterAlignmentHorz = taCenter
+        GroupSummaryAlignment = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 74
+        Position.BandIndex = 0
+        Position.ColIndex = 5
+        Position.RowIndex = 0
+      end
+      object gvwMasterTRADEBOND_NO: TcxGridDBBandedColumn
+        Caption = 'Tradebonds No.'
+        DataBinding.FieldName = 'TRADEBOND_NO'
+        Position.BandIndex = 0
+        Position.ColIndex = 15
+        Position.RowIndex = 0
+      end
+      object gvwMasterINTEREST_RATE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'INTEREST_RATE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 16
+        Position.RowIndex = 0
+      end
+      object gvwMasterACR_INTEREST: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'ACR_INTEREST'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 17
+        Position.RowIndex = 0
+      end
+      object gvwMasterHOLDPERIOD: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'HOLDPERIOD'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 18
+        Position.RowIndex = 0
+      end
+      object gvwMasterLASTCOUPONDATE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'LASTCOUPONDATE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 19
+        Position.RowIndex = 0
+      end
+      object gvwMasterNEXTCOUPONDATE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'NEXTCOUPONDATE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 20
+        Position.RowIndex = 0
+      end
+      object gvwMasterMATURITYDATE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'MATURITYDATE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 21
+        Position.RowIndex = 0
+      end
+      object gvwMasterCOUPONPERIOD: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'COUPONPERIOD'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 22
+        Position.RowIndex = 0
+      end
+      object gvwMasterACRINTERESTDAY: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'ACRINTERESTDAY'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 23
+        Position.RowIndex = 0
+      end
+      object gvwMasterVALUEDATE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'VALUEDATE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 24
+        Position.RowIndex = 0
+      end
+      object gvwMasterPOSTED: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'POSTED'
+        PropertiesClassName = 'TcxCheckBoxProperties'
+        Properties.Alignment = taCenter
+        Properties.NullStyle = nssUnchecked
+        Properties.ValueChecked = '1'
+        Properties.ValueUnchecked = '0'
+        Visible = False
+        Width = 38
+        Position.BandIndex = 0
+        Position.ColIndex = 25
+        Position.RowIndex = 0
+      end
+      object gvwMasterJRNID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'JRNID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 26
+        Position.RowIndex = 0
+      end
+      object gvwMasterSETTLE_INSTR: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'SETTLE_INSTR'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 27
+        Position.RowIndex = 0
+      end
+      object gvwMasterCONFIRMED: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'CONFIRMED'
+        PropertiesClassName = 'TcxCheckBoxProperties'
+        Properties.Alignment = taCenter
+        Properties.NullStyle = nssUnchecked
+        Properties.ValueChecked = '1'
+        Properties.ValueUnchecked = '0'
+        Width = 54
+        Position.BandIndex = 0
+        Position.ColIndex = 28
+        Position.RowIndex = 0
+      end
+    end
+    object gvwDetails: TcxGridDBBandedTableView [1]
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = dsContractBond_D
+      DataController.DetailKeyFieldNames = 'CONBONID'
+      DataController.KeyFieldNames = 'CONBONID_DE'
+      DataController.MasterKeyFieldNames = 'CONBONID'
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      OptionsData.CancelOnExit = False
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsView.GridLineColor = 16777088
+      OptionsView.GroupByBox = False
+      OptionsView.Indicator = True
+      Styles.ContentOdd = BlueToggle
+      Bands = <
+        item
+        end>
+      object gvwDetailsCONBONID_DE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'CONBONID_DE'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 0
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCONBONID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'CONBONID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 1
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCONNO: TcxGridDBBandedColumn
+        Caption = 'Contract No.'
+        DataBinding.FieldName = 'CONNO'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 2
+        Position.RowIndex = 0
+      end
+      object gvwDetailsACCID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'ACCID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 3
+        Position.RowIndex = 0
+      end
+      object gvwDetailsACCNO: TcxGridDBBandedColumn
+        Caption = 'Account No.'
+        DataBinding.FieldName = 'ACCNO'
+        Position.BandIndex = 0
+        Position.ColIndex = 4
+        Position.RowIndex = 0
+      end
+      object gvwDetailsBS: TcxGridDBBandedColumn
+        Caption = 'B/S'
+        DataBinding.FieldName = 'BS'
+        PropertiesClassName = 'TcxImageComboBoxProperties'
+        Properties.Items = <
+          item
+            Description = 'Buy'
+            ImageIndex = 0
+            Value = 'B'
+          end
+          item
+            Description = 'Sell'
+            Value = 'S'
+          end>
+        Position.BandIndex = 0
+        Position.ColIndex = 5
+        Position.RowIndex = 0
+      end
+      object gvwDetailsPRICE: TcxGridDBBandedColumn
+        Caption = 'Price'
+        DataBinding.FieldName = 'PRICE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0.0000%'
+        Width = 80
+        Position.BandIndex = 0
+        Position.ColIndex = 6
+        Position.RowIndex = 0
+      end
+      object gvwDetailsPROCEED: TcxGridDBBandedColumn
+        Caption = 'Proceed'
+        DataBinding.FieldName = 'PROCEED'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 7
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCAPGAIN_RATE: TcxGridDBBandedColumn
+        Caption = 'Cap. Gain Rate'
+        DataBinding.FieldName = 'CAPGAIN_RATE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 8
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCAPGAIN: TcxGridDBBandedColumn
+        Caption = 'Capital Gain'
+        DataBinding.FieldName = 'CAPGAIN'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 9
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCAPGAIN_TAX: TcxGridDBBandedColumn
+        Caption = 'Cap. Gain Tax'
+        DataBinding.FieldName = 'CAPGAIN_TAX'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0.00'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 10
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCTPREF: TcxGridDBBandedColumn
+        Caption = 'CTP Reff'
+        DataBinding.FieldName = 'CTPREF'
+        Position.BandIndex = 0
+        Position.ColIndex = 11
+        Position.RowIndex = 0
+      end
+      object gvwDetailsNETPROCEED: TcxGridDBBandedColumn
+        Caption = 'Net Proceed'
+        DataBinding.FieldName = 'NETPROCEED'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 12
+        Position.RowIndex = 0
+      end
+      object gvwDetailsMARKETCODE: TcxGridDBBandedColumn
+        Caption = 'Market Code'
+        DataBinding.FieldName = 'MARKETCODE'
+        Position.BandIndex = 0
+        Position.ColIndex = 13
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCCYCODE: TcxGridDBBandedColumn
+        Caption = 'CCY'
+        DataBinding.FieldName = 'CCYCODE'
+        Position.BandIndex = 0
+        Position.ColIndex = 14
+        Position.RowIndex = 0
+      end
+      object gvwDetailsWHTAMT: TcxGridDBBandedColumn
+        Caption = 'WHT Amount'
+        DataBinding.FieldName = 'WHTAMT'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 15
+        Position.RowIndex = 0
+      end
+      object gvwDetailsSTAT: TcxGridDBBandedColumn
+        Caption = 'Status'
+        DataBinding.FieldName = 'STAT'
+        Position.BandIndex = 0
+        Position.ColIndex = 16
+        Position.RowIndex = 0
+      end
+      object gvwDetailsMODDA: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'MODDA'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 17
+        Position.RowIndex = 0
+      end
+      object gvwDetailsMODUI: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'MODUI'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 18
+        Position.RowIndex = 0
+      end
+      object gvwDetailsAPPDA: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'APPDA'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 19
+        Position.RowIndex = 0
+      end
+      object gvwDetailsAPPUI: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'APPUI'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 20
+        Position.RowIndex = 0
+      end
+      object gvwDetailsID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'ID'
+        Visible = False
+        Position.BandIndex = 0
+        Position.ColIndex = 21
+        Position.RowIndex = 0
+      end
+      object gvwDetailsHOLDINTERESTTAX: TcxGridDBBandedColumn
+        Caption = 'Holding Interest Rate'
+        DataBinding.FieldName = 'HOLDINTERESTTAX'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 22
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCAPGAINRATE: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'CAPGAINRATE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Visible = False
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 23
+        Position.RowIndex = 0
+      end
+      object gvwDetailsSALESID: TcxGridDBBandedColumn
+        DataBinding.FieldName = 'SALESID'
+        Position.BandIndex = 0
+        Position.ColIndex = 24
+        Position.RowIndex = 0
+      end
+      object gvwDetailsHOLDINGINTEREST: TcxGridDBBandedColumn
+        Caption = 'Holding Interest'
+        DataBinding.FieldName = 'HOLDINGINTEREST'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 25
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCOST_PRICE: TcxGridDBBandedColumn
+        Caption = 'Cost Price'
+        DataBinding.FieldName = 'COST_PRICE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 26
+        Position.RowIndex = 0
+      end
+      object gvwDetailsCOST_AMT: TcxGridDBBandedColumn
+        Caption = 'Cost Amount'
+        DataBinding.FieldName = 'COST_AMT'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = '#,##0'
+        Width = 100
+        Position.BandIndex = 0
+        Position.ColIndex = 27
+        Position.RowIndex = 0
+      end
+      object gvwDetailsACQ_DATE: TcxGridDBBandedColumn
+        Caption = 'Acq Date'
+        DataBinding.FieldName = 'ACQ_DATE'
+        PropertiesClassName = 'TcxDateEditProperties'
+        Properties.DisplayFormat = 'dd mmm yyyy'
+        Position.BandIndex = 0
+        Position.ColIndex = 28
+        Position.RowIndex = 0
+      end
+    end
+    inherited grdMasterLevel1: TcxGridLevel
+      object grdMasterLevel2: TcxGridLevel
+        GridView = gvwDetails
+      end
+    end
+  end
+  object dxLayoutControl1: TdxLayoutControl [1]
+    Left = 0
+    Top = 26
+    Width = 921
+    Height = 47
+    Align = alTop
+    TabOrder = 5
+    object txtContractDate: TcxDateEdit
+      Left = 83
+      Top = 10
+      Properties.DisplayFormat = 'dd mmm yyyy'
+      Properties.ShowTime = False
+      Style.BorderColor = clWindowFrame
+      Style.BorderStyle = ebs3D
+      Style.HotTrack = False
+      Style.ButtonStyle = bts3D
+      Style.PopupBorderStyle = epbsFrame3D
+      TabOrder = 0
+      Width = 121
+    end
+    object cxButton1: TcxButton
+      Left = 210
+      Top = 10
+      Width = 75
+      Height = 25
+      Caption = 'View'
+      TabOrder = 1
+      OnClick = cxButton1Click
+    end
+    object cxButton2: TcxButton
+      Left = 291
+      Top = 10
+      Width = 145
+      Height = 25
+      Action = actCloseContractBonds
+      TabOrder = 2
+    end
+    object cxButton3: TcxButton
+      Left = 442
+      Top = 10
+      Width = 159
+      Height = 25
+      Action = actGenerateFileSI
+      TabOrder = 3
+    end
+    object dxLayoutControl1Group_Root: TdxLayoutGroup
+      AlignHorz = ahLeft
+      AlignVert = avTop
+      ButtonOptions.Buttons = <>
+      Hidden = True
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = -1
+    end
+    object dxLayoutControl1Item1: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'Contract Date'
+      Control = txtContractDate
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object dxLayoutControl1Item2: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      Control = cxButton1
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 75
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object dxLayoutControl1Item3: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton2'
+      CaptionOptions.Visible = False
+      Control = cxButton2
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 145
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object dxLayoutControl1Item4: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton3'
+      CaptionOptions.Visible = False
+      Control = cxButton3
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 159
+      ControlOptions.ShowBorder = False
+      Index = 3
+    end
+    object dxLayoutControl1Group2: TdxLayoutGroup
+      Parent = dxLayoutControl1Group_Root
+      CaptionOptions.Text = 'Hidden Group'
+      ButtonOptions.Buttons = <>
+      Hidden = True
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 0
+    end
+  end
+  inherited ActionPermission: TNActionPermission
+    Actions = <
+      item
+        ActionName = 'actView'
+        Permission = '[Contract Bonds].View Approval Data'
+      end
+      item
+        ActionName = 'actOpen'
+        Permission = '[Contract Bonds].View'
+      end
+      item
+        ActionName = 'actNew'
+        Permission = '[Contract Bonds].New'
+      end
+      item
+        ActionName = 'actEdit'
+        Permission = '[Contract Bonds].Edit'
+      end
+      item
+        ActionName = 'actDelete'
+        Permission = '[Contract Bonds].Delete'
+      end
+      item
+        ActionName = 'actRefresh'
+        Permission = '[Contract Bonds].Refresh'
+      end
+      item
+        ActionName = 'actCancel'
+        Permission = '[Contract Bonds].Cancel'
+      end
+      item
+        ActionName = 'actInsertFromCurrentData'
+        Permission = '[Contract Bonds].Copy From Selected Data'
+      end
+      item
+        ActionName = 'actApprove'
+        Permission = '[Contract Bonds].Approve'
+      end
+      item
+        ActionName = 'actReject'
+        Permission = '[Contract Bonds].Reject'
+      end>
+    Left = 299
+  end
+  inherited imlBrowse: TImageList
+    Bitmap = {
+      494C01010E002700680310001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000004000000001002000000000000040
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000009C9C9C00000000000000000000000000848484008484
+      84008C8C8C000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000004C47456AB9AFACE94E45437F020202030000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00009C9C9C009C9C9C00D6CECE009494940039393900525252009C949400C6C6
+      C600D6D6D6008484840000000000000000000000000000000000000000000000
+      0000000000000000000000000000756C6CB3E3D9D6FF6F605DC00605050B0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000009C9C9C009C9C
+      9C00F7F7F700FFFFFF00D6D6D6009C9C9C004242420021182100211821003131
+      310063636300848484008C8C8C00000000000000000000000000000000000000
+      00000000000000000000000000006A6060AAD6CAC8FF5B4C4AB6040303080000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000948C8C009C9C9C00EFEFEF00FFFF
+      FF00EFE7E700C6C6C6009C9C9C008C8C8C009494940084848400636363003939
+      3900182121002118210073737300000000000000000000000000000000000000
+      0000000000000000000000000000625857A6D2C5C3FF564847C2030303090000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000009C9C9C00E7E7E700E7E7E700BDBD
+      BD00A5A5A500B5ADAD00C6BDBD00A5A5A50094949400948C8C00949494009C94
+      94008C8C8C006B6B6B0084848400000000000000000000000000000000000000
+      000000000000000000001916162FAB9D9DE4D6C9C8FF857676F81B17174A0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000094949400ADADAD00A5A5A500ADAD
+      AD00C6C6C600D6D6D600EFEFEF00EFEFEF00DEDEDE00C6C6C600ADADAD009C9C
+      9C00948C8C00949494008C8C8C00000000000000000000000000000000000000
+      00000000000003030306807374B9EADCDDFFB3A8A8FFA99D9DFF6A5D5DDB0605
+      050F000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000948C8C00ADADAD00C6C6C600CECE
+      CE00C6C6C600DEDEDE00CECECE00A5ADA500BDBDBD00CECECE00D6D6D600D6D6
+      D600C6C6C600B5B5B50094949400000000000000000000000000000000000000
+      0000000000004840417BEEE3E3FFE8DDDDFFA39999FFDCD1CFFFBAABAAFF4136
+      37A5020202070000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000009C9C9C00CECECE00CECE
+      CE00DEDEDE00C6C6C600B5B5B500A5D6A500BDC6BD00C6A5A500ADA5A500A5A5
+      A500B5B5B500C6BDBD00A5A5A500000000001411112C797271B1807675B92521
+      20531612123ACBBEBFF7FFFDFCFFC1B7B6FFAAA09FFFE5D9D8FFDBCDCCFF8676
+      76FB241E1E610000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000009C9C9C00BDBD
+      BD00ADADAD00ADADAD00E7E7E700F7EFEF00EFEFEF00EFE7DE00D6D6D600CECE
+      CE00B5B5B5009494940000000000000000004E4342A96864627C55504F624F42
+      42AD807070EDFBF1F1FFF4EBE9FFA39897FFB4A8A7FFE9DDDCFFDACBC9FFAB9A
+      99FF665657F10E0B0B2A00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000009C9C
+      9C00D6D6D600CECECE009C9C9C00BDBDBD00D6D6D600D6D6D600D6D6D600C6C6
+      C600ADADAD00000000000000000000000000362E2D8906050508050505073A2F
+      2F91D4C4C4FFFFFCFCFFDBD6D4FFA39896FFB9ACACFFEFE4E3FFD5C6C4FFB2A1
+      9FFF7C6A6AFF3C3032BB01010106000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFE7E700FFDECE00E7C6BD00E7C6BD00E7CEC600DED6CE00CECECE009494
+      94000000000000000000000000000000000036302F72716969BD706564C0A998
+      98FFF8EEEEFFFEFEFEFFCDC9C8FFAEA19FFFCABFBDFFFCF8F7FFF5F0EFFFD9CF
+      CFFF8E7B7BFF5E4D4EFF1E17177E000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000CE9C9C00FFDECE00FFCEBD00FFC6AD00FFBDA500FFAD9C00000000000000
+      0000000000000000000000000000000000000605050C3A343580877977FEECE1
+      E0FFFFFFFFFFFEFEFEFFEAE4E4FFDBD4D3FFECE5E5FFFCF9F9FFF5F0EFFFD9CF
+      CFFFD9CFCFFF7A6A6CFF493A3CF61410115A0000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000CE9C9C00FFDECE00FFCEBD00FFC6AD00FFBDA500F7AD9400000000000000
+      0000000000000000000000000000000000000000000028222364B6A7A5FDF7EF
+      EEFFD5D1D2FFAAA4A4FFA7A3A3FFADAAAAFFA8A6A6FF97908FFF9F9C9CFFADAA
+      AAFFD9CFCFFFD9CFCFFF918588FF483D41E60000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000CE9C9C00FFDECE00FFCEBD00FFC6AD00FFBDA500F7AD9C00000000000000
+      000000000000000000000000000000000000000000004A444481CCC0C1FFF7EF
+      EEFFA19695FF8A7E7DFF998C8BFFA69F9FFF9E9695FF7A6968FF847778FF8C86
+      86FF928887FFEFE4E3FFD8D0D0FF746A6DEB0000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000CE9C
+      9C00FFE7D600FFDECE00FFCEBD00FFC6AD00FFBDA500F7AD9C00000000000000
+      0000000000000000000000000000000000000000000017151523595253958980
+      81DCF7EFEEFFEFE4E3FFEFE4E3FFEFE4E3FFEFE4E3FFEFE4E3FFEFE4E3FFEFE4
+      E3FFEFE4E3FF9A9193EF6A6363B52A2626490000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000CE9C
+      9C00CE9C9C00CE9C9C00CE9C9C00F7AD9C00F7AD9C0000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000A08
+      09282F29298B766D6FCE8C8385E4958C8EE8998F91E9918788E98E8486E56B64
+      66BF322C2C7B0D0B0C3404030309000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000AD5A5A00AD52
+      5200A54A4A00AD949400C6CEC600CECEC600CECEC600C6CEC600C6CEC600B59C
+      9C009C4242009C424200A55252000000000000000000000000000052AD000052
+      AD00004A9C00004A9400004A9400004A9400004A9400004A9400004A9400004A
+      9400004A940000428400000000000000000000000000000000000052AD000052
+      AD00004A9C00004A9400004A9400004A9400004A9400004A9400004A9400004A
+      9400004A940000428400000000000000000000000000000000000052AD000052
+      AD00004A9C00004A9400004A9400004A9400004A9400004A9400004A9400004A
+      9400004A940000428400000000000000000000000000BD7B7300CE636300CE6B
+      6B00B55A5A009C848400BDA5A500E7CECE00FFF7F700FFFFF700F7F7F700CEB5
+      B500942929009C313100C65A5A00AD5A5A00000000000063CE000073EF000073
+      E700006BDE00006BD6000063CE000063CE000063CE000063CE000063CE000063
+      CE00006BD600005ABD000042840000000000000000000063CE000073EF000073
+      E700006BDE00006BD6000063CE000063CE000063CE000063CE000063CE000063
+      CE00006BD600005ABD000042840000000000000000000063CE000073EF000073
+      E700006BDE00006BD6000063CE000063CE000063CE000063CE000063CE000063
+      CE00006BD600005ABD00004284000000000000000000BD7B7300CE636300CE63
+      6300B55A5A009C7B7B009C424200B5737300E7DEDE00FFF7F700FFFFFF00D6B5
+      B500943131009C313100BD5A5A00AD5A5A00000000000073E7000084FF00007B
+      FF00007BF7000073F7000073EF00006BE700006BE700006BE700006BE700006B
+      E7000073E700006BD600004A940000000000000000000073E7000084FF00007B
+      FF00007BF7000073F7000073EF00006BE700006BE700006BE700006BE700006B
+      E7000073E700006BD600004A940000000000000000000073E7000084FF00007B
+      FF00007BF7000073F7000073EF00006BE700006BE700006BE700006BE700006B
+      E7000073E700006BD600004A94000000000000000000BD7B7300CE636300CE63
+      6300B55A5A00AD8484009C3939009C393900CEBDBD00EFEFEF00FFFFFF00E7C6
+      C6009429290094313100BD5A5A00AD5A5A0000000000007BF7000884FF000084
+      FF00007BFF00007BF7000073EF000073E700006BE700006BDE00006BDE00006B
+      DE00006BE7000063CE00004A94000000000000000000007BF7000884FF000084
+      FF00007BFF00007BF7000073EF0084BDF700006BE700006BDE00006BDE00006B
+      DE00006BE7000063CE00004A94000000000000000000007BF7000884FF000084
+      FF00007BFF00007BF700107BEF00CEE7FF00318CE700006BDE00006BDE00006B
+      DE00006BE7000063CE00004A94000000000000000000BD7B7300CE636300CE63
+      6300B55A5A00B58C8C009C4A4A0094313100A59C9C00D6D6D600FFFFFF00E7C6
+      C6009429290094313100BD5A5A00AD5A5A0000000000007BF700188CFF00108C
+      FF000084FF00FFFFFF00CEE7FF00107BEF000073EF009CCEF700FFFFFF00006B
+      DE00006BE7000063CE00004A94000000000000000000007BF700188CFF00108C
+      FF000084FF00007BFF00FFFFFF0084BDF7000073EF00006BE700006BDE00006B
+      DE00006BE7000063CE00004A94000000000000000000007BF700188CFF00108C
+      FF000084FF001084FF00CEE7FF00FFFFFF008CC6F700006BE700006BDE00006B
+      DE00006BE7000063CE00004A94000000000000000000BD7B7300CE636300CE63
+      6300BD5A5A00C6948C00C6949400B5848400AD8C8C00BDA5A500E7C6C600DEAD
+      AD00A5393900A5393900C65A5A00AD5A5A0000000000007BF700399CFF002194
+      FF00108CFF00D6E7FF00FFFFFF00CEE7FF009CCEFF00FFFFFF00CEE7FF00006B
+      DE00006BE7000063CE00004A94000000000000000000007BF700399CFF002194
+      FF00108CFF00FFFFFF00FFFFFF009CCEFF00429CF7004294EF004294EF004294
+      EF00006BE7000063CE00004A94000000000000000000007BF700399CFF002194
+      FF00218CFF00D6E7FF00FFFFFF00FFFFFF00DEEFFF000073EF000073E700006B
+      DE00006BE7000063CE00004A94000000000000000000BD7B7300CE636300CE63
+      6300CE636300CE636300CE636300CE636300CE636300C65A5A00C65A5A00CE63
+      6300CE636300CE636300CE6B6B00AD525A0000000000007BF70063ADFF00319C
+      FF00188CFF00218CFF00D6E7FF00FFFFFF00FFFFFF00CEE7FF00107BEF000073
+      E7000073E7000063D600004A94000000000000000000007BF70063ADFF00319C
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF000073E7000063D600004A94000000000000000000007BF70063ADFF00319C
+      FF00E7F7FF00FFFFFF00D6E7FF0063ADFF00FFFFFF00429CF7000073EF000073
+      E7000073E7000063D600004A94000000000000000000BD7B7300B5525200B55A
+      5A00C6848400D6A5A500D6ADAD00D6ADA500D6ADAD00D6A5A500D6A5A500D6AD
+      A500D6ADAD00D69C9C00CE636300AD52520000000000007BF70073BDFF00429C
+      FF002194FF00108CFF00A5D6FF00FFFFFF00FFFFFF00CEE7FF001084F7000073
+      EF000073EF00006BD600004A9C000000000000000000007BF70073BDFF00429C
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF000073EF00006BD600004A9C000000000000000000007BF70073BDFF00429C
+      FF0073BDFF00ADD6FF00188CFF000084FF00B5D6FF009CCEFF00007BF7000073
+      EF000073EF00006BD600004A9C000000000000000000BD7B7300AD524A00E7CE
+      CE00F7F7F700F7F7EF00F7F7F700F7F7F700F7F7F700F7F7F700F7F7F700F7F7
+      F700F7F7F700DEBDBD00C65A5A00AD525A0000000000007BF70084C6FF004AA5
+      FF002994FF00ADD6FF00FFFFFF00D6EFFF00D6EFFF00FFFFFF00CEE7FF00007B
+      F700007BF700006BE7000052AD000000000000000000007BF70084C6FF004AA5
+      FF002994FF00FFFFFF00FFFFFF00A5D6FF004AA5FF0042A5FF00429CFF00429C
+      FF00007BF700006BE7000052AD000000000000000000007BF70084C6FF004AA5
+      FF002994FF00188CFF000884FF000884FF002994FF00E7EFFF001084FF00007B
+      F700007BF700006BE7000052AD000000000000000000BD7B7300B5524A00EFD6
+      D600FFF7F700F7EFEF00F7EFEF00F7EFEF00F7EFEF00F7EFEF00F7EFEF00F7EF
+      EF00F7F7F700DEBDBD00C65A5A00AD525A0000000000007BF7008CC6FF0052AD
+      FF00399CFF00F7FFFF00D6EFFF002194FF002194FF00D6EFFF00FFFFFF000084
+      FF00007BFF000073EF00005AB5000000000000000000007BF7008CC6FF0052AD
+      FF00399CFF003194FF00FFFFFF008CC6FF00108CFF000884FF000084FF000084
+      FF00007BFF000073EF00005AB5000000000000000000007BF7008CC6FF0052AD
+      FF00399CFF003194FF00218CFF00188CFF00108CFF006BB5FF0073BDFF000084
+      FF00007BFF000073EF00005AB5000000000000000000BD7B7300B5524A00EFD6
+      D600EFEFEF00D6D6D600D6D6D600D6D6D600D6D6D600D6D6D600D6D6D600D6D6
+      D600EFEFEF00DEBDBD00C65A5A00AD525A0000000000007BF7009CCEFF006BB5
+      FF0042A5FF00399CFF002994FF002194FF002194FF00188CFF000884FF000884
+      FF000084FF00007BF700005AC6000000000000000000007BF7009CCEFF006BB5
+      FF0042A5FF00399CFF002994FF008CC6FF002194FF00188CFF000884FF000884
+      FF000084FF00007BF700005AC6000000000000000000007BF7009CCEFF006BB5
+      FF0042A5FF00399CFF002994FF002194FF002194FF00188CFF0084C6FF000884
+      FF000084FF00007BF700005AC6000000000000000000BD7B7300B5524A00EFD6
+      D600EFEFEF00DED6D600DEDEDE00DEDEDE00DEDEDE00DEDEDE00DEDEDE00DED6
+      D600EFEFEF00DEBDBD00C65A5A00AD525A0000000000007BF700A5CEFF0094CE
+      FF007BBDFF0073B5FF0063ADFF004AA5FF00399CFF002194FF00108CFF000884
+      FF000884FF00007BFF000063CE000000000000000000007BF700A5CEFF0094CE
+      FF007BBDFF0073B5FF0063ADFF004AA5FF00399CFF002194FF00108CFF000884
+      FF000884FF00007BFF000063CE000000000000000000007BF700A5CEFF0094CE
+      FF007BBDFF0073B5FF0063ADFF004AA5FF00399CFF002194FF00108CFF000884
+      FF000884FF00007BFF000063CE000000000000000000BD7B7300B5524A00EFD6
+      D600F7F7EF00E7DEDE00E7DEDE00E7DEDE00E7DEDE00E7DEDE00E7DEDE00E7DE
+      DE00EFEFEF00DEBDBD00C65A5A00AD525A0000000000007BF70084BDFF00A5CE
+      FF00A5D6FF009CCEFF008CC6FF0073BDFF0052A5FF00319CFF00188CFF00108C
+      FF00108CFF000084FF00006BDE000000000000000000007BF70084BDFF00A5CE
+      FF00A5D6FF009CCEFF008CC6FF0073BDFF0052A5FF00319CFF00188CFF00108C
+      FF00108CFF000084FF00006BDE000000000000000000007BF70084BDFF00A5CE
+      FF00A5D6FF009CCEFF008CC6FF0073BDFF0052A5FF00319CFF00188CFF00108C
+      FF00108CFF000084FF00006BDE000000000000000000BD7B7300B5524A00EFD6
+      D600EFEFEF00D6D6D600D6D6D600D6D6D600D6D6D600D6D6D600D6D6D600D6D6
+      D600EFEFEF00DEBDBD00C65A5A00AD525A0000000000000000000884FF002994
+      FF002994FF002994FF002194FF00188CFF000884FF000084FF00007BFF00007B
+      F700007BF7000073E700000000000000000000000000000000000884FF002994
+      FF002994FF002994FF002194FF00188CFF000884FF000084FF00007BFF00007B
+      F700007BF7000073E700000000000000000000000000000000000884FF002994
+      FF002994FF002994FF002194FF00188CFF000884FF000084FF00007BFF00007B
+      F700007BF7000073E700000000000000000000000000BD7B7300B5524A00E7D6
+      CE00FFF7F700F7EFEF00F7EFEF00F7EFEF00F7EFEF00F7EFEF00F7EFEF00F7EF
+      EF00FFF7F700DEBDBD00C65A5A00AD525A000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000AD524A00CEB5
+      B500D6D6D600CECECE00CECECE00CECECE00CECECE00CECECE00CECECE00CECE
+      CE00D6D6D600CEADAD00A54A4A00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000001884000018
+      840000187B0000106B0000106B0000106B0000106B0000106B0000106B000010
+      6B0000106B0000105A0000000000000000000000000000000000001884000018
+      840000187B0000106B0000106B0000106B0000106B0000106B0000106B000010
+      6B0000106B0000105A0000000000000000000000000000000000001884000018
+      840000187B0000106B0000106B0000106B0000106B0000106B0000106B000010
+      6B0000106B0000105A00000000000000000000000000000000000052AD000052
+      AD00004A9C00004A9400004A9400004A9400004A9400004A9400004A9400004A
+      9400004A9400004284000000000000000000000000000021AD000029CE000029
+      C6000021BD000021B5000021AD000021AD000021AD000021AD000021AD000021
+      AD000021B5000018940000105A0000000000000000000021AD000029CE000029
+      C6000021BD000021B5000021AD000021AD000021AD000021AD000021AD000021
+      AD000021B5000018940000105A0000000000000000000021AD000029CE000029
+      C6000021BD000021B5000021AD000021AD000021AD000021AD000021AD000021
+      AD000021B5000018940000105A0000000000000000000063CE000073EF000073
+      E700006BDE00006BD6000063CE000063CE000063CE000063CE000063CE000063
+      CE00006BD600005ABD000042840000000000000000000029CE000031EF000029
+      DE000029DE000029D6000029CE000029C6000029C6000029C6000029C6000029
+      C6000029C6000021B50000106B0000000000000000000029CE000031EF000029
+      DE000029DE000029D6000029CE000029C6000029C6000029C6000029C6000029
+      C6000029C6000021B50000106B0000000000000000000029CE000031EF000029
+      DE000029DE000029D6000029CE000029C6000029C6000029C6000029C6000029
+      C6000029C6000021B50000106B0000000000000000000073E7000084FF00007B
+      FF00007BF7000073F7000073EF00006BE700006BE700006BE700006BE700006B
+      E7000073E700006BD600004A940000000000000000000029D6000031F7000031
+      EF000029DE000029D6000029CE000029C6000029C6000021BD000021BD000021
+      BD000029C6000021AD0000106B0000000000000000000029D6000031F7000031
+      EF000029DE000029D6000029CE000029C6000029C6000021BD000021BD000021
+      BD000029C6000021AD0000106B0000000000000000000029D6000031F7000031
+      EF000029DE000029D600526BDE00EFF7FF009CADE7001031C6000021BD000021
+      BD000029C6000021AD0000106B000000000000000000007BF7000884FF000084
+      FF001084FF0084BDFF00FFFFFF00FFFFFF00FFFFFF0084B5EF001073DE00006B
+      DE00006BE7000063CE00004A940000000000000000000029D6000039FF000031
+      FF000031EF000029DE000029D600FFFFFF00F7FFFF000029C6000021BD000021
+      BD000029C6000021AD0000106B0000000000000000000029D6000039FF000031
+      FF000031EF000029DE000029D6000029D6000029CE000029C6000021BD000021
+      BD000029C6000021AD0000106B0000000000000000000029D6000039FF000031
+      FF00ADBDFF001039E7000029D600ADBDF700FFFFFF009CADEF000021BD000021
+      BD000029C6000021AD0000106B000000000000000000007BF700188CFF00108C
+      FF00A5D6FF00EFF7FF0063ADFF00429CF70063ADF700EFF7FF009CCEF700006B
+      DE00006BE7000063CE00004A940000000000000000000029D6002952FF000842
+      FF000031FF000031EF000029E700FFFFFF00FFFFFF000029CE000029C6000021
+      BD000029C6000021AD0000106B0000000000000000000029D6002952FF000842
+      FF000031FF000031EF000029E7000029DE000029D6000029CE000029C6000021
+      BD000029C6000021AD0000106B0000000000000000000029D6002952FF000842
+      FF00FFFFFF008CA5F7000029E700526BE700FFFFFF00BDCEF7000029C6000021
+      BD000029C6000021AD0000106B000000000000000000007BF700399CFF002194
+      FF00FFFFFF0063B5FF00007BFF00007BF700007BF70063ADF700FFFFFF00006B
+      DE00006BE7000063CE00004A940000000000000000000029D6004A73FF00184A
+      FF000031FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000029
+      CE000029C6000021B50000106B0000000000000000000029D6004A73FF00184A
+      FF000031FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000029
+      CE000029C6000021B50000106B0000000000000000000029D6004A73FF00184A
+      FF00FFFFFF00FFFFFF008CA5F700EFF7FF00FFFFFF009CB5F7000029D6000029
+      CE000029C6000021B50000106B000000000000000000007BF70063ADFF00319C
+      FF00FFFFFF004AA5FF0063B5FF00FFFFFF00007BFF00218CF70084BDF7000073
+      E7000073E7000063D600004A940000000000000000000029D6006B8CFF00295A
+      FF000839FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000029
+      D6000029CE000021B5000018730000000000000000000029D6006B8CFF00295A
+      FF000839FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000029
+      D6000029CE000021B5000018730000000000000000000029D6006B8CFF00295A
+      FF006384FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00EFF7FF003152DE000029
+      D6000029CE000021B500001873000000000000000000007BF70073BDFF00429C
+      FF00F7FFFF00B5DEFF0084C6FF00FFFFFF00FFFFFF0063ADFF00007BF7000073
+      EF000073EF00006BD600004A9C0000000000000000000029D6007394FF003163
+      FF001042FF000031FF000031F700FFFFFF00FFFFFF000031EF000029E7000029
+      DE000029DE000029C6000018840000000000000000000029D6007394FF003163
+      FF001042FF000031FF000031F7000031F7000031F7000031EF000029E7000029
+      DE000029DE000029C6000018840000000000000000000029D6007394FF003163
+      FF001042FF00426BFF00849CFF00637BF700CEDEFF00FFFFFF00EFF7FF003152
+      E7000029DE000029C600001884000000000000000000007BF70084C6FF004AA5
+      FF007BBDFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00BDDEFF00007B
+      F700007BF700006BE7000052AD0000000000000000000029D600849CFF00426B
+      FF002152FF00184AFF000839FF00FFFFFF00FFFFFF000031F7000031EF000031
+      E7000029E7000029CE000018940000000000000000000029D600849CFF00426B
+      FF002152FF00184AFF000839FF000031FF000031FF000031F7000031EF000031
+      E7000029E7000029CE000018940000000000000000000029D600849CFF00426B
+      FF002152FF00184AFF000839FF000031FF001042FF00EFF7FF00FFFFFF00EFF7
+      FF000029E7000029CE00001894000000000000000000007BF7008CC6FF0052AD
+      FF00399CFF0063B5FF00C6E7FF00FFFFFF00FFFFFF00B5DEFF002194FF000084
+      FF00007BFF000073EF00005AB50000000000000000000029D6008CA5FF005A7B
+      FF00295AFF002952FF00184AFF000839FF000839FF000031FF000031F7000031
+      EF000031EF000029D60000219C0000000000000000000029D6008CA5FF005A7B
+      FF00295AFF002952FF00184AFF000839FF000839FF000031FF000031F7000031
+      EF000031EF000029D60000219C0000000000000000000029D6008CA5FF005A7B
+      FF00295AFF002952FF00184AFF000839FF000839FF00315AFF00EFF7FF00CEDE
+      FF000031EF000029D60000219C000000000000000000007BF7009CCEFF006BB5
+      FF0042A5FF00399CFF0094CEFF00FFFFFF005AADFF00188CFF000884FF000884
+      FF000084FF00007BF700005AC60000000000000000000029D60094ADFF008CA5
+      FF00738CFF006384FF004A73FF003963FF002952FF000839FF000031FF000031
+      F7000031F7000029E7000021AD0000000000000000000029D60094ADFF008CA5
+      FF00738CFF006384FF004A73FF003963FF002952FF000839FF000031FF000031
+      F7000031F7000029E7000021AD0000000000000000000029D60094ADFF008CA5
+      FF00738CFF006384FF004A73FF003963FF002952FF000839FF000031FF000031
+      F7000031F7000029E7000021AD000000000000000000007BF700A5CEFF0094CE
+      FF007BBDFF0073B5FF0063ADFF004AA5FF00399CFF002194FF00108CFF000884
+      FF000884FF00007BFF000063CE0000000000000000000029D6007394FF0094AD
+      FF009CB5FF008CA5FF007B9CFF006384FF003963FF00184AFF000031FF000031
+      FF000031FF000031EF000021BD0000000000000000000029D6007394FF0094AD
+      FF009CB5FF008CA5FF007B9CFF006384FF003963FF00184AFF000031FF000031
+      FF000031FF000031EF000021BD0000000000000000000029D6007394FF0094AD
+      FF009CB5FF008CA5FF007B9CFF006384FF003963FF00184AFF000031FF000031
+      FF000031FF000031EF000021BD000000000000000000007BF70084BDFF00A5CE
+      FF00A5D6FF009CCEFF008CC6FF0073BDFF0052A5FF00319CFF00188CFF00108C
+      FF00108CFF000084FF00006BDE000000000000000000000000000031F7001042
+      FF00184AFF001042FF000842FF000031FF000031F7000031E7000029DE000029
+      DE000029DE000029CE00000000000000000000000000000000000031F7001042
+      FF00184AFF001042FF000842FF000031FF000031F7000031E7000029DE000029
+      DE000029DE000029CE00000000000000000000000000000000000031F7001042
+      FF00184AFF001042FF000842FF000031FF000031F7000031E7000029DE000029
+      DE000029DE000029CE00000000000000000000000000000000000884FF002994
+      FF002994FF002994FF002194FF00188CFF000884FF000084FF00007BFF00007B
+      F700007BF7000073E70000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000844200008442
+      0000733900006B3100006B3100006B3100006B3100006B3100006B3100006B31
+      00006B3100005A29000000000000000000000000000000000000844200008442
+      0000733900006B3100006B3100006B3100006B3100006B3100006B3100006B31
+      00006B3100005A29000000000000000000000000000000000000087B1000087B
+      100008731000006B080000630800006308000063080000630800006308000063
+      0800006308000052080000000000000000000000000000000000087B1000087B
+      100008731000006B080000630800006308000063080000630800006308000063
+      08000063080000520800000000000000000000000000AD520000CE630000C663
+      0000BD5A0000B55A0000AD520000AD520000AD520000AD520000AD520000AD52
+      0000B55A0000944A00005A2900000000000000000000AD520000CE630000C663
+      0000BD5A0000B55A0000AD520000AD520000AD520000AD520000AD520000AD52
+      0000B55A0000944A00005A2900000000000000000000109C290018B5390010AD
+      310010AD210008AD180008A5180008A5100008A5100008A5100008A5100008A5
+      100008AD1800008C1000005208000000000000000000109C290018B5390010AD
+      310010AD210008AD180008A5180008A5100008A5100008A5100008A5100008A5
+      100008AD1800008C1000005208000000000000000000C6630000EF730000DE6B
+      0000D66B0000D6630000CE630000C6630000BD5A0000BD5A0000BD5A0000BD5A
+      0000C6630000B55A00006B3100000000000000000000C6630000EF730000DE6B
+      0000D66B0000D6630000CE630000C6630000BD5A0000BD5A0000BD5A0000BD5A
+      0000C6630000B55A00006B310000000000000000000018AD390021C6520018C6
+      420018BD390010BD310010BD210008BD180008BD180008BD180008BD180008B5
+      180008BD180008AD100000630800000000000000000018AD390021C6520018C6
+      420018BD390010BD310010BD210008BD180008BD180008BD180008BD180008B5
+      180008BD180008AD1000006308000000000000000000D66B0000EF730000E773
+      0000DE6B0000D66B0000CE630000C6630000C65A0000BD5A0000BD5A0000BD5A
+      0000BD5A0000AD5200006B3100000000000000000000D66B0000EF730000E773
+      0000DE6B0000D66B0000CE630000C6630000C65A0000BD5A0000BD5A0000BD5A
+      0000BD5A0000AD5200006B310000000000000000000021B5420031C6630029BD
+      520021BD4A0018BD390010B5310010B5290029BD3900D6F7D60008B5180008B5
+      180008B5180008A51000006B0800000000000000000021B5420031C6630029BD
+      520021BD4A0018BD3900D6F7DE0031BD420008B5210008B5180008B5180008B5
+      180008B5180008A51000006B08000000000000000000D66B0000F7841000EF7B
+      0800E7730000FFFFFF00D66B0000D66B0000CE630000D68C4200F7EFDE00BD5A
+      0000BD5A0000AD5200006B3100000000000000000000D66B0000F7841000EF7B
+      0800E7730000FFEFDE00E7944200D66B0000CE630000C6630000FFFFFF00BD5A
+      0000BD5A0000AD5200006B310000000000000000000021B54A0039CE730031C6
+      630029BD520021BD4A0018BD420052CE6B00F7FFF700FFFFFF0008B5180008B5
+      180008BD180008A5100000630800000000000000000021B54A0039CE730031C6
+      630029BD520021BD4A00FFFFFF00F7FFF7004ACE630008B5210008B5180008B5
+      180008BD180008A51000006308000000000000000000D66B0000FF943100F784
+      1800F77B0800FFFFFF00E76B0000DE7B2100F7D6AD00FFFFFF00FFFFFF00BD5A
+      0000BD5A0000AD5200006B3100000000000000000000D66B0000FF943100F784
+      1800F77B0800FFFFFF00FFFFFF00F7D6AD00DE7B2100CE630000FFFFFF00BD5A
+      0000BD5A0000AD5200006B310000000000000000000021B54A005AD68C0042CE
+      7B0031C66B0029BD5A0084DE9C00FFFFFF00FFFFFF00FFFFFF0010B5290008B5
+      180008B5180008A5100000630800000000000000000021B54A005AD68C0042CE
+      7B0031C66B0029BD5A00FFFFFF00FFFFFF00FFFFFF007BD68C0010B5290008B5
+      180008B5180008A51000006308000000000000000000D66B0000FFA55200F78C
+      2900F7841000FFFFFF00F7BD8400FFF7EF00FFFFFF00FFFFFF00FFFFFF00CE63
+      0000C6630000B55200006B3100000000000000000000D66B0000FFA55200F78C
+      2900F7841000FFFFFF00FFFFFF00FFFFFF00FFF7EF00EFB58400FFFFFF00CE63
+      0000C6630000B55200006B310000000000000000000021B54A0073DE9C0052CE
+      840039C67300B5EFC600FFFFFF00FFFFFF00FFFFFF00FFFFFF0018BD310010B5
+      290008BD210008A51800006B0800000000000000000021B54A0073DE9C0052CE
+      840039C6730031C66B00FFFFFF00FFFFFF00FFFFFF00FFFFFF00ADE7B50010B5
+      290008BD210008A51800006B08000000000000000000D66B0000FFB56B00F794
+      3100F7841000FFFFFF00FFB57300FFF7EF00FFFFFF00FFFFFF00FFFFFF00D66B
+      0000CE630000BD5A0000733900000000000000000000D66B0000FFB56B00F794
+      3100F7841000FFFFFF00FFFFFF00FFFFFF00FFF7EF00EFAD7300FFFFFF00D66B
+      0000CE630000BD5A000073390000000000000000000021B54A008CDEAD005AD6
+      8C0042CE7300B5EFCE00FFFFFF00FFFFFF00FFFFFF00FFFFFF0018BD420018BD
+      390010BD310008AD2100006B0800000000000000000021B54A008CDEAD005AD6
+      8C0042CE730031C66B00FFFFFF00FFFFFF00FFFFFF00FFFFFF00ADE7BD0018BD
+      390010BD310008AD2100006B08000000000000000000D66B0000FFBD7B00F79C
+      3900F78C2100FFFFFF00F77B0000F7841000FFD6AD00FFFFFF00FFFFFF00DE6B
+      0000DE6B0000C6630000844200000000000000000000D66B0000FFBD7B00F79C
+      3900F78C2100FFFFFF00FFFFFF00FFD6AD00F7841000EF730000FFFFFF00DE6B
+      0000DE6B0000C663000084420000000000000000000021B54A0094E7B50063D6
+      8C004ACE7B0039C673007BDEA500FFFFFF00FFFFFF00FFFFFF0021BD520018BD
+      420018BD390010AD2900087B1000000000000000000021B54A0094E7B50063D6
+      8C004ACE7B0039C67300FFFFFF00FFFFFF00FFFFFF007BDE9C0021BD520018BD
+      420018BD390010AD2900087B10000000000000000000D66B0000FFBD8400F79C
+      4A00F7943100FFFFFF00F7841000F77B0800F77B0000F79C4200FFEFDE00E773
+      0000E7730000CE630000944200000000000000000000D66B0000FFBD8400F79C
+      4A00F7943100FFF7E700F7A54A00F77B0800F77B0000F77B0000FFFFFF00E773
+      0000E7730000CE63000094420000000000000000000021B54A009CE7BD006BD6
+      940052CE84004ACE7B0042CE73005AD68C00F7FFF700FFFFFF0029C6630021BD
+      520021C64A0018B5390008841800000000000000000021B54A009CE7BD006BD6
+      940052CE84004ACE7B00FFFFFF00F7FFF7005AD68C0031C66B0029C6630021BD
+      520021C64A0018B53900088418000000000000000000D66B0000FFC69400F7AD
+      6300F7943900F7943100F78C2100F7841800F7841000F77B0800F77B0000EF73
+      0000EF730000D66B00009C4A00000000000000000000D66B0000FFC69400F7AD
+      6300F7943900F7943100F78C2100F7841800F7841000F77B0800F77B0000EF73
+      0000EF730000D66B00009C4A0000000000000000000021B54A00ADE7C60084DE
+      A5005AD68C005ACE84004ACE7B0042CE7B004ACE8400DEF7E70031C66B0029C6
+      630029C65A0021B54A00108C1800000000000000000021B54A00ADE7C60084DE
+      A5005AD68C005ACE8400DEF7E70052CE840042CE730039C6730031C66B0029C6
+      630029C65A0021B54A00108C18000000000000000000D66B0000FFCE9C00FFC6
+      9400FFB57300F7AD6B00F7A55200F79C4200F7943100F7841000F77B0800F77B
+      0000F77B0000E7730000AD5200000000000000000000D66B0000FFCE9C00FFC6
+      9400FFB57300F7AD6B00F7A55200F79C4200F7943100F7841000F77B0800F77B
+      0000F77B0000E7730000AD520000000000000000000021B54A00ADEFC600A5E7
+      BD0094DEAD0084DEA5007BD69C0063D694005ACE840042CE7B0031C66B0031C6
+      6B0031C66B0021BD5200109C2100000000000000000021B54A00ADEFC600A5E7
+      BD0094DEAD0084DEA5007BD69C0063D694005ACE840042CE7B0031C66B0031C6
+      6B0031C66B0021BD5200109C21000000000000000000D66B0000FFBD7B00FFCE
+      9C00FFCE9C00FFC69400FFBD8400FFB56B00FF9C4200F78C2100F7840800F77B
+      0000FF7B0000EF730000B55A00000000000000000000D66B0000FFBD7B00FFCE
+      9C00FFCE9C00FFC69400FFBD8400FFB56B00FF9C4200F78C2100F7840800F77B
+      0000FF7B0000EF730000B55A0000000000000000000021B54A0094E7B500ADEF
+      C600B5EFCE00ADE7C6009CE7BD0084DEAD006BD694004ACE840039C6730031C6
+      730031CE730029BD5A0010A52900000000000000000021B54A0094E7B500ADEF
+      C600B5EFCE00ADE7C6009CE7BD0084DEAD006BD694004ACE840039C6730031C6
+      730031CE730029BD5A0010A52900000000000000000000000000DE731000DE84
+      3100DE8C3100DE8C3100DE842900DE7B2100DE731000DE730800D66B0000D66B
+      0000D66B0000CE63000000000000000000000000000000000000DE731000DE84
+      3100DE8C3100DE8C3100DE842900DE7B2100DE731000DE730800D66B0000D66B
+      0000D66B0000CE6300000000000000000000000000000000000039BD5A0052C6
+      730052C6730052C66B004AC66B0042C6630031BD5A0029BD520021B54A0021B5
+      4A0021B54A0018AD39000000000000000000000000000000000039BD5A0052C6
+      730052C6730052C66B004AC66B0042C6630031BD5A0029BD520021B54A0021B5
+      4A0021B54A0018AD390000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000400000000100010000000000000200000000000000000000
+      000000000000000000000000FFFFFF00FDC7000000000000F003000000000000
+      C001000000000000000100000000000000010000000000000001000000000000
+      00010000000000008001000000000000C003000000000000E007000000000000
+      F00F000000000000F03F000000000000F03F000000000000F03F000000000000
+      E03F000000000000E07F000000000000FFFFFFFFFFFFC001C003C003C0038000
+      8001800180018000800180018001800080018001800180008001800180018000
+      8001800180018000800180018001800080018001800180008001800180018000
+      8001800180018000800180018001800080018001800180008001800180018000
+      C003C003C0038000FFFFFFFFFFFFC001FFFFFFFFFFFFFFFFC003C003C003C003
+      8001800180018001800180018001800180018001800180018001800180018001
+      8001800180018001800180018001800180018001800180018001800180018001
+      8001800180018001800180018001800180018001800180018001800180018001
+      C003C003C003C003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC003C003C003C003
+      8001800180018001800180018001800180018001800180018001800180018001
+      8001800180018001800180018001800180018001800180018001800180018001
+      8001800180018001800180018001800180018001800180018001800180018001
+      C003C003C003C003FFFFFFFFFFFFFFFF00000000000000000000000000000000
+      000000000000}
+  end
+  inherited PrintComp: TdxComponentPrinter
+    inherited PrintCompMainGrid: TdxGridReportLink
+      AssignedFormatValues = []
+      BuiltInReportLink = True
+    end
+  end
+  inherited saBrowse: TcxStyleRepository
+    PixelsPerInch = 96
+  end
+  inherited popMaster: TPopupMenu
+    OnPopup = popMasterPopup
+    object GenerateReportSI1: TMenuItem
+      Action = actGenerateReportSI
+    end
+    object N5: TMenuItem
+      Caption = '-'
+    end
+    object ConfirmContract1: TMenuItem
+      Action = actConfirm
+    end
+    object CTPRefferenceUpate1: TMenuItem
+      Action = actCTPUpd
+    end
+    object ReverseBondsContract1: TMenuItem
+      Action = actReverseBondsContract
+    end
+    object CancelContractBonds1: TMenuItem
+      Action = actCancelContract
+    end
+  end
+  inherited dsBrowseMaster: TDataSource
+    DataSet = cdsContractBondList
+  end
+  inherited aclEditor: TActionList
+    object actCloseContractBonds: TNAction
+      Category = 'NActions'
+      Caption = 'Close Contract Bonds'
+      OnExecute = actCloseContractBondsExecute
+      OnUpdate = actCloseContractBondsUpdate
+      CheckPermission = False
+    end
+    object actCTPUpd: TNAction
+      Category = 'NActions'
+      Caption = 'CTP Reference Update'
+      OnExecute = actCTPUpdExecute
+      OnUpdate = actCTPUpdUpdate
+      CheckPermission = False
+    end
+    object actReverseBondsContract: TNAction
+      Category = 'NActions'
+      Caption = 'Reverse Bonds Contract'
+      OnExecute = actReverseBondsContractExecute
+      OnUpdate = actReverseBondsContractUpdate
+      CheckPermission = False
+    end
+    object actCancelContract: TNAction
+      Category = 'NActions'
+      Caption = 'Cancel Contract Bonds'
+      OnExecute = actCancelContractExecute
+      OnUpdate = actCancelContractUpdate
+      CheckPermission = False
+    end
+    object actConfirm: TNAction
+      Category = 'NActions'
+      Caption = 'Confirm Contract'
+      OnExecute = actConfirmExecute
+      OnUpdate = actConfirmUpdate
+      CheckPermission = False
+    end
+    object actGenerateFileSI: TNAction
+      Category = 'NActions'
+      Caption = 'Generate File Excel SI'
+      OnExecute = actGenerateFileSIExecute
+      CheckPermission = False
+    end
+    object actGenerateReportSI: TNAction
+      Category = 'NActions'
+      Caption = 'Generate Report SI'
+      OnExecute = actGenerateReportSIExecute
+      CheckPermission = False
+    end
+  end
+  inherited BarMBrowse: TdxBarManager
+    DockControlHeights = (
+      0
+      0
+      26
+      0)
+  end
+  inherited DataContainer: TNMasterDetailData
+    AutoUpdateList = True
+    ListDataset = cdsContractBondList
+    OnGetEditorClass = DataContainerGetEditorClass
+  end
+  inherited ReportContainer: TNClientReportContainer
+    ReportName = 'Fix Income\GenerateReportSettleInstruction.fr3'
+    Params = <
+      item
+        DataType = ftDate
+        Name = 'CONDATE'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftInteger
+        Name = 'TRADEBOND_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  inherited SaveDlg: TSaveDialog
+    Filter = 'Excel File|*.xlsx|Excel File 2003|*.xls'
+  end
+  object cdsContractBondList: TNClientDataset
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftTimeStamp
+        Name = 'CONDATE'
+        ParamType = ptUnknown
+      end>
+    ProviderName = 'dspN_dmFixIncome_qryContractBondList'
+    RemoteServer = dmGlobal.dspConnection
+    AutoSequence = False
+    AutoApplyUpdate = True
+    AutoUserAuditTrail = False
+    Control4Eyes = False
+    Left = 105
+    Top = 150
+    object cdsContractBondListCONBONID: TLargeintField
+      FieldName = 'CONBONID'
+      Required = True
+    end
+    object cdsContractBondListTRADEBOND_ID: TLargeintField
+      FieldName = 'TRADEBOND_ID'
+      Required = True
+    end
+    object cdsContractBondListCONDATE: TDateTimeField
+      FieldName = 'CONDATE'
+      DisplayFormat = 'dd mmm yyyy'
+    end
+    object cdsContractBondListINSTRUMENT_ID: TLargeintField
+      FieldName = 'INSTRUMENT_ID'
+    end
+    object cdsContractBondListINSTRUMENT_CODE: TStringField
+      FieldName = 'INSTRUMENT_CODE'
+      Size = 30
+    end
+    object cdsContractBondListFACEVALUE: TFloatField
+      FieldName = 'FACEVALUE'
+      DisplayFormat = '#,##0;(#,##0)'
+    end
+    object cdsContractBondListDUEDATE: TDateTimeField
+      FieldName = 'DUEDATE'
+      DisplayFormat = 'dd mmm yyyy'
+    end
+    object cdsContractBondListMODDA: TDateTimeField
+      FieldName = 'MODDA'
+    end
+    object cdsContractBondListMODUI: TStringField
+      FieldName = 'MODUI'
+      Size = 30
+    end
+    object cdsContractBondListAPPDA: TDateTimeField
+      FieldName = 'APPDA'
+    end
+    object cdsContractBondListAPPUI: TStringField
+      FieldName = 'APPUI'
+      Size = 30
+    end
+    object cdsContractBondListID: TLargeintField
+      FieldName = 'ID'
+    end
+    object cdsContractBondListSTAT: TStringField
+      FieldName = 'STAT'
+      Size = 1
+    end
+    object cdsContractBondListINTEREST_RATE: TFloatField
+      FieldName = 'INTEREST_RATE'
+    end
+    object cdsContractBondListACR_INTEREST: TFloatField
+      FieldName = 'ACR_INTEREST'
+    end
+    object cdsContractBondListHOLDPERIOD: TIntegerField
+      FieldName = 'HOLDPERIOD'
+    end
+    object cdsContractBondListLASTCOUPONDATE: TDateTimeField
+      FieldName = 'LASTCOUPONDATE'
+    end
+    object cdsContractBondListNEXTCOUPONDATE: TDateTimeField
+      FieldName = 'NEXTCOUPONDATE'
+    end
+    object cdsContractBondListMATURITYDATE: TDateTimeField
+      FieldName = 'MATURITYDATE'
+    end
+    object cdsContractBondListCOUPONPERIOD: TIntegerField
+      FieldName = 'COUPONPERIOD'
+    end
+    object cdsContractBondListACRINTERESTDAY: TIntegerField
+      FieldName = 'ACRINTERESTDAY'
+    end
+    object cdsContractBondListVALUEDATE: TDateTimeField
+      FieldName = 'VALUEDATE'
+    end
+    object cdsContractBondListPOSTED: TStringField
+      DisplayLabel = 'Posted'
+      FieldName = 'POSTED'
+      Size = 1
+    end
+    object cdsContractBondListCTPREFF: TStringField
+      FieldName = 'CTPREFF'
+      Size = 10
+    end
+    object cdsContractBondListCTP_UPD: TStringField
+      FieldName = 'CTP_UPD'
+      Size = 1
+    end
+    object cdsContractBondListTRADEBOND_NO: TStringField
+      FieldName = 'TRADEBOND_NO'
+    end
+    object cdsContractBondListJRNID: TLargeintField
+      FieldName = 'JRNID'
+    end
+    object cdsContractBondListSETTLE_INSTR: TStringField
+      FieldName = 'SETTLE_INSTR'
+      Size = 10
+    end
+    object cdsContractBondListCONFIRMED: TStringField
+      DisplayLabel = 'Confirmed'
+      FieldName = 'CONFIRMED'
+      Size = 1
+    end
+  end
+  object cdsContractBond_D: TNClientDataset
+    Aggregates = <>
+    IndexFieldNames = 'CONBONID'
+    Params = <
+      item
+        DataType = ftDateTime
+        Name = 'CONDATE'
+        ParamType = ptUnknown
+      end>
+    ProviderName = 'dspN_dmFixIncome_qryContractBond_D'
+    RemoteServer = dmGlobal.dspConnection
+    AutoSequence = False
+    AutoApplyUpdate = False
+    AutoUserAuditTrail = False
+    Control4Eyes = False
+    Left = 414
+    Top = 348
+    object cdsContractBond_DCONBONID_DE: TLargeintField
+      FieldName = 'CONBONID_DE'
+      Required = True
+    end
+    object cdsContractBond_DCONBONID: TLargeintField
+      FieldName = 'CONBONID'
+      Required = True
+    end
+    object cdsContractBond_DCONNO: TStringField
+      FieldName = 'CONNO'
+    end
+    object cdsContractBond_DACCID: TLargeintField
+      FieldName = 'ACCID'
+    end
+    object cdsContractBond_DACCNO: TStringField
+      FieldName = 'ACCNO'
+      Size = 30
+    end
+    object cdsContractBond_DBS: TStringField
+      FieldName = 'BS'
+      Size = 1
+    end
+    object cdsContractBond_DPRICE: TFloatField
+      FieldName = 'PRICE'
+    end
+    object cdsContractBond_DPROCEED: TFloatField
+      FieldName = 'PROCEED'
+    end
+    object cdsContractBond_DCAPGAIN_RATE: TFloatField
+      FieldName = 'CAPGAIN_RATE'
+    end
+    object cdsContractBond_DCAPGAIN: TFloatField
+      FieldName = 'CAPGAIN'
+    end
+    object cdsContractBond_DCAPGAIN_TAX: TFloatField
+      FieldName = 'CAPGAIN_TAX'
+    end
+    object cdsContractBond_DCTPREF: TStringField
+      FieldName = 'CTPREF'
+      Size = 10
+    end
+    object cdsContractBond_DNETPROCEED: TFloatField
+      FieldName = 'NETPROCEED'
+    end
+    object cdsContractBond_DMARKETCODE: TStringField
+      FieldName = 'MARKETCODE'
+      Size = 10
+    end
+    object cdsContractBond_DCCYCODE: TStringField
+      FieldName = 'CCYCODE'
+      Size = 5
+    end
+    object cdsContractBond_DWHTAMT: TFloatField
+      FieldName = 'WHTAMT'
+    end
+    object cdsContractBond_DSTAT: TStringField
+      FieldName = 'STAT'
+      Size = 1
+    end
+    object cdsContractBond_DMODDA: TDateTimeField
+      FieldName = 'MODDA'
+    end
+    object cdsContractBond_DMODUI: TStringField
+      FieldName = 'MODUI'
+      Size = 30
+    end
+    object cdsContractBond_DAPPDA: TDateTimeField
+      FieldName = 'APPDA'
+    end
+    object cdsContractBond_DAPPUI: TStringField
+      FieldName = 'APPUI'
+      Size = 30
+    end
+    object cdsContractBond_DID: TLargeintField
+      FieldName = 'ID'
+    end
+    object cdsContractBond_DHOLDINTERESTTAX: TFloatField
+      FieldName = 'HOLDINTERESTTAX'
+    end
+    object cdsContractBond_DSALESID: TLargeintField
+      FieldName = 'SALESID'
+    end
+    object cdsContractBond_DHOLDINGINTEREST: TFloatField
+      FieldName = 'HOLDINGINTEREST'
+    end
+    object cdsContractBond_DCOST_PRICE: TFloatField
+      FieldName = 'COST_PRICE'
+    end
+    object cdsContractBond_DCOST_AMT: TFloatField
+      FieldName = 'COST_AMT'
+    end
+    object cdsContractBond_DACQ_DATE: TDateTimeField
+      FieldName = 'ACQ_DATE'
+    end
+  end
+  object dsContractBond_D: TDataSource
+    DataSet = cdsContractBond_D
+    Left = 507
+    Top = 258
+  end
+  object cdsContractBonds: TNClientDataset
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'CONBONID'
+        ParamType = ptUnknown
+      end>
+    ProviderName = 'dspN_dmFixIncome_qryContractBond'
+    RemoteServer = dmGlobal.dspConnection
+    AutoSequence = False
+    AutoApplyUpdate = False
+    AutoUserAuditTrail = False
+    Control4Eyes = False
+    Left = 204
+    Top = 150
+    object cdsContractBondsTRADEBOND_ID: TLargeintField
+      FieldName = 'TRADEBOND_ID'
+      Required = True
+    end
+    object cdsContractBondsCONBONID: TLargeintField
+      FieldName = 'CONBONID'
+      Required = True
+    end
+    object cdsContractBondsINSTRUMENT_ID: TLargeintField
+      FieldName = 'INSTRUMENT_ID'
+    end
+    object cdsContractBondsINSTRUMENT_CODE: TStringField
+      FieldName = 'INSTRUMENT_CODE'
+      Size = 30
+    end
+    object cdsContractBondsCONDATE: TDateTimeField
+      FieldName = 'CONDATE'
+    end
+    object cdsContractBondsDUEDATE: TDateTimeField
+      FieldName = 'DUEDATE'
+    end
+    object cdsContractBondsFACEVALUE: TFloatField
+      FieldName = 'FACEVALUE'
+    end
+    object cdsContractBondsINTEREST_RATE: TFloatField
+      FieldName = 'INTEREST_RATE'
+    end
+    object cdsContractBondsACR_INTEREST: TFloatField
+      FieldName = 'ACR_INTEREST'
+    end
+    object cdsContractBondsHOLDPERIOD: TIntegerField
+      FieldName = 'HOLDPERIOD'
+    end
+    object cdsContractBondsLASTCOUPONDATE: TDateTimeField
+      FieldName = 'LASTCOUPONDATE'
+    end
+    object cdsContractBondsNEXTCOUPONDATE: TDateTimeField
+      FieldName = 'NEXTCOUPONDATE'
+    end
+    object cdsContractBondsMATURITYDATE: TDateTimeField
+      FieldName = 'MATURITYDATE'
+    end
+    object cdsContractBondsCOUPONPERIOD: TIntegerField
+      FieldName = 'COUPONPERIOD'
+    end
+    object cdsContractBondsACRINTERESTDAY: TIntegerField
+      FieldName = 'ACRINTERESTDAY'
+    end
+    object cdsContractBondsACQ_DATE: TDateTimeField
+      FieldName = 'ACQ_DATE'
+      ReadOnly = True
+    end
+    object cdsContractBondsSHORTNAME: TStringField
+      FieldName = 'SHORTNAME'
+      ReadOnly = True
+      Size = 100
+    end
+    object cdsContractBondsCTPREF: TStringField
+      FieldName = 'CTPREF'
+      Size = 10
+    end
+  end
+  object cdsCancelContractBonds: TNClientDataset
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'TRADEID'
+        ParamType = ptInput
+      end>
+    ProviderName = 'dspN_dmFixIncome_qryCancelContractBonds'
+    RemoteServer = dmGlobal.dspConnection
+    AutoSequence = False
+    AutoApplyUpdate = False
+    AutoUserAuditTrail = False
+    Control4Eyes = False
+    Left = 312
+    Top = 150
+  end
+  object cdsContractBondH: TNClientDataset
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'CONBONID'
+        ParamType = ptUnknown
+      end>
+    ProviderName = 'dspN_dmFixIncome_qryContractBondH'
+    RemoteServer = dmGlobal.dspConnection
+    AutoSequence = False
+    AutoApplyUpdate = False
+    AutoUserAuditTrail = False
+    Control4Eyes = False
+    Left = 204
+    Top = 357
+    object cdsContractBondHCONBONID: TLargeintField
+      FieldName = 'CONBONID'
+      Required = True
+    end
+    object cdsContractBondHTRADEBOND_ID: TLargeintField
+      FieldName = 'TRADEBOND_ID'
+      Required = True
+    end
+    object cdsContractBondHCONDATE: TDateTimeField
+      FieldName = 'CONDATE'
+    end
+    object cdsContractBondHINSTRUMENT_ID: TLargeintField
+      FieldName = 'INSTRUMENT_ID'
+    end
+    object cdsContractBondHINSTRUMENT_CODE: TStringField
+      FieldName = 'INSTRUMENT_CODE'
+      Size = 30
+    end
+    object cdsContractBondHFACEVALUE: TFloatField
+      FieldName = 'FACEVALUE'
+    end
+    object cdsContractBondHDUEDATE: TDateTimeField
+      FieldName = 'DUEDATE'
+    end
+    object cdsContractBondHINTEREST_RATE: TFloatField
+      FieldName = 'INTEREST_RATE'
+    end
+    object cdsContractBondHACR_INTEREST: TFloatField
+      FieldName = 'ACR_INTEREST'
+    end
+    object cdsContractBondHHOLDPERIOD: TIntegerField
+      FieldName = 'HOLDPERIOD'
+    end
+    object cdsContractBondHLASTCOUPONDATE: TDateTimeField
+      FieldName = 'LASTCOUPONDATE'
+    end
+    object cdsContractBondHNEXTCOUPONDATE: TDateTimeField
+      FieldName = 'NEXTCOUPONDATE'
+    end
+    object cdsContractBondHMATURITYDATE: TDateTimeField
+      FieldName = 'MATURITYDATE'
+    end
+    object cdsContractBondHCOUPONPERIOD: TIntegerField
+      FieldName = 'COUPONPERIOD'
+    end
+    object cdsContractBondHACRINTERESTDAY: TIntegerField
+      FieldName = 'ACRINTERESTDAY'
+    end
+    object cdsContractBondHVALUEDATE: TDateTimeField
+      FieldName = 'VALUEDATE'
+    end
+    object cdsContractBondHCTPREFF: TStringField
+      FieldName = 'CTPREFF'
+      Size = 10
+    end
+    object cdsContractBondHCTP_UPD: TStringField
+      FieldName = 'CTP_UPD'
+      Size = 1
+    end
+    object cdsContractBondHSTAT: TStringField
+      FieldName = 'STAT'
+      Size = 1
+    end
+    object cdsContractBondHPOSTED: TStringField
+      FieldName = 'POSTED'
+      Size = 1
+    end
+    object cdsContractBondHJRNID: TLargeintField
+      FieldName = 'JRNID'
+    end
+    object cdsContractBondHMODDA: TDateTimeField
+      FieldName = 'MODDA'
+    end
+    object cdsContractBondHMODUI: TStringField
+      FieldName = 'MODUI'
+      Size = 30
+    end
+    object cdsContractBondHAPPDA: TDateTimeField
+      FieldName = 'APPDA'
+    end
+    object cdsContractBondHAPPUI: TStringField
+      FieldName = 'APPUI'
+      Size = 30
+    end
+    object cdsContractBondHID: TLargeintField
+      FieldName = 'ID'
+    end
+    object cdsContractBondHSETTLE_INSTR: TStringField
+      FieldName = 'SETTLE_INSTR'
+      Size = 10
+    end
+    object cdsContractBondHCONFIRMED: TStringField
+      FieldName = 'CONFIRMED'
+      Size = 1
+    end
+  end
+  object cdsGenerateSI: TNClientDataset
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftDate
+        Name = 'CONDATE'
+        ParamType = ptUnknown
+      end>
+    ProviderName = 'dspN_dmFixIncome_qryGenerateSI'
+    RemoteServer = dmGlobal.dspConnection
+    AutoSequence = False
+    AutoApplyUpdate = False
+    AutoUserAuditTrail = False
+    Control4Eyes = False
+    Left = 558
+    Top = 171
+    object cdsGenerateSICTPREF: TStringField
+      FieldName = 'CTPREF'
+      Size = 10
+    end
+    object cdsGenerateSIACCNO: TStringField
+      FieldName = 'ACCNO'
+      Size = 30
+    end
+    object cdsGenerateSIACCNAME: TStringField
+      FieldName = 'ACCNAME'
+      ReadOnly = True
+      Size = 150
+    end
+    object cdsGenerateSIBANKACCNO: TStringField
+      FieldName = 'BANKACCNO'
+      ReadOnly = True
+      Size = 30
+    end
+    object cdsGenerateSIBS: TStringField
+      FieldName = 'BS'
+      ReadOnly = True
+      Required = True
+      Size = 4
+    end
+    object cdsGenerateSIINSTRUMENT_CODE: TStringField
+      FieldName = 'INSTRUMENT_CODE'
+      ReadOnly = True
+      Size = 30
+    end
+    object cdsGenerateSISHORTNAME: TStringField
+      FieldName = 'SHORTNAME'
+      ReadOnly = True
+      Size = 100
+    end
+    object cdsGenerateSICONDATE: TDateTimeField
+      FieldName = 'CONDATE'
+      ReadOnly = True
+    end
+    object cdsGenerateSIDUEDATE: TDateTimeField
+      FieldName = 'DUEDATE'
+      ReadOnly = True
+    end
+    object cdsGenerateSIFACEVALUE: TFloatField
+      FieldName = 'FACEVALUE'
+      ReadOnly = True
+    end
+    object cdsGenerateSIPRICE: TFloatField
+      FieldName = 'PRICE'
+    end
+    object cdsGenerateSIPROCEED: TFloatField
+      FieldName = 'PROCEED'
+    end
+    object cdsGenerateSICAPGAIN: TFloatField
+      FieldName = 'CAPGAIN'
+    end
+    object cdsGenerateSIACR_INTEREST: TFloatField
+      FieldName = 'ACR_INTEREST'
+      ReadOnly = True
+    end
+    object cdsGenerateSITOTAL_PROCEED: TFloatField
+      FieldName = 'TOTAL_PROCEED'
+      ReadOnly = True
+    end
+    object cdsGenerateSIACR_INTEREST_TAX: TFloatField
+      FieldName = 'ACR_INTEREST_TAX'
+    end
+    object cdsGenerateSICAPGAIN_TAXAMT: TFloatField
+      FieldName = 'CAPGAIN_TAXAMT'
+    end
+    object cdsGenerateSINETPROCEED: TFloatField
+      FieldName = 'NETPROCEED'
+    end
+    object cdsGenerateSICOUNTERPARTY: TStringField
+      FieldName = 'COUNTERPARTY'
+      ReadOnly = True
+    end
+  end
+end

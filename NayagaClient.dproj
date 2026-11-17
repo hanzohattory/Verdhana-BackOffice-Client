@@ -1,0 +1,3785 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0BE7FE97-F141-47A1-A484-CEFE7E0FB663}</ProjectGuid>
+        <MainSource>NayagaClient.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>19.5</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_Define>4GB;$(DCC_Define)</DCC_Define>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <Manifest_File>None</Manifest_File>
+        <DCC_ExeOutput>.\Output\$(Platform)</DCC_ExeOutput>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <SanitizedProjectName>NayagaClient</SanitizedProjectName>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>NayagaClient_Icon.ico</Icon_MainIcon>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <DCC_UsePackage>vcl;rtl;vclimg;xmlrtl;vclactnband;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Icon_MainIcon>NayagaClient_Icon.ico</Icon_MainIcon>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <BT_BuildType>Debug</BT_BuildType>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <VerInfo_Keys>CompanyName=PT Kalacakra Teknologi;FileDescription=Nayaga Client Application;FileVersion=1.0.0.165;InternalName=;LegalCopyright=Copyright © 2017-2019 Cakra-Tech;LegalTrademarks=;OriginalFilename=;ProductName=Nayaga i-Banking System;ProductVersion=1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>165</VerInfo_Build>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Icon_MainIcon>NayagaClient_Icon.ico</Icon_MainIcon>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=Nayaga Client Application;FileVersion=1.0.0.135;InternalName=;LegalCopyright=Copyright © 2013-2019 Cakra-Tech;LegalTrademarks=;OriginalFilename=;ProductName=Nayaga iBanking System;ProductVersion=1.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <Icon_MainIcon>NayagaClient_Icon1.ico</Icon_MainIcon>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_ExeOutput>.\Output\$(Platform)</DCC_ExeOutput>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <BT_BuildType>Debug</BT_BuildType>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <VerInfo_AutoIncVersion>false</VerInfo_AutoIncVersion>
+        <VerInfo_Build>135</VerInfo_Build>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="FormMain.pas">
+            <Form>frmMain</Form>
+        </DCCReference>
+        <DCCReference Include="DataGlobal.pas">
+            <Form>dmGlobal</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormSplash.pas">
+            <Form>frmNFECSplash</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrowseSingle.pas">
+            <Form>frmBrowseSingle</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrowseMD.pas">
+            <Form>frmBrowseMD</Form>
+        </DCCReference>
+        <DCCReference Include="ClassGeneral.pas"/>
+        <DCCReference Include="FormProgressBar.pas">
+            <Form>frmProgressBar</Form>
+        </DCCReference>
+        <DCCReference Include="Cromis.Scheduler.pas"/>
+        <DCCReference Include="Cromis.StringUtils.pas"/>
+        <DCCReference Include="Cromis.Unicode.pas"/>
+        <DCCReference Include="MTIGlobalConst.pas"/>
+        <DCCReference Include="MTIObjects.pas"/>
+        <DCCReference Include="FormLoginDialog.pas">
+            <Form>frmLoginDialog</Form>
+        </DCCReference>
+        <DCCReference Include="FormBasic.pas">
+            <Form>frmBasic</Form>
+        </DCCReference>
+        <DCCReference Include="FormEditor.pas">
+            <Form>frmEditor</Form>
+        </DCCReference>
+        <DCCReference Include="ClassClientConst.pas"/>
+        <DCCReference Include="FormSingleBrowse.pas">
+            <Form>frmSingleBrowse</Form>
+        </DCCReference>
+        <DCCReference Include="FormSingleEditor.pas">
+            <Form>frmSingleEditor</Form>
+        </DCCReference>
+        <DCCReference Include="DataLookup.pas">
+            <Form>dmLookup</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormMDBrowse.pas">
+            <Form>frmMDBrowse</Form>
+        </DCCReference>
+        <DCCReference Include="FormMDEditor.pas">
+            <Form>frmMDEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommTables.pas">
+            <Form>frmCommTables</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommTable.pas">
+            <Form>frmCommTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormEditorData.pas">
+            <Form>frmEditorData</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommissionTables.pas">
+            <Form>frmCommissionTables</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommissionTable.pas">
+            <Form>frmCommissionTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormBanks.pas">
+            <Form>frmBanks</Form>
+        </DCCReference>
+        <DCCReference Include="FormBank.pas">
+            <Form>frmBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormCurrencyList.pas">
+            <Form>frmCurrencyList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCurrency.pas">
+            <Form>frmCurrency</Form>
+        </DCCReference>
+        <DCCReference Include="FormChannels.pas">
+            <Form>frmChannels</Form>
+        </DCCReference>
+        <DCCReference Include="FormChannel.pas">
+            <Form>frmChannel</Form>
+        </DCCReference>
+        <DCCReference Include="FormMarkets.pas">
+            <Form>frmMarkets</Form>
+        </DCCReference>
+        <DCCReference Include="FormMarket.pas">
+            <Form>frmMarket</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterestList.pas">
+            <Form>frmInterestList</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterest.pas">
+            <Form>frmInterest</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterestTables.pas">
+            <Form>frmInterestTables</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterestTable.pas">
+            <Form>frmInterestTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuInterestTable.pas">
+            <Form>frmLuInterestTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormInstrumentTypes.pas">
+            <Form>frmInstrumentTypes</Form>
+        </DCCReference>
+        <DCCReference Include="FormInstrumentType.pas">
+            <Form>frmInstrumentType</Form>
+        </DCCReference>
+        <DCCReference Include="FormInstruments.pas">
+            <Form>frmInstruments</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpActInstrument.pas">
+            <Form>frmCorpActInstrument</Form>
+        </DCCReference>
+        <DCCReference Include="FormBoards.pas">
+            <Form>frmBoards</Form>
+        </DCCReference>
+        <DCCReference Include="FormBoard.pas">
+            <Form>frmBoard</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTickets.pas">
+            <Form>frmDealTickets</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrokers.pas">
+            <Form>frmBrokers</Form>
+        </DCCReference>
+        <DCCReference Include="FormBroker.pas">
+            <Form>frmBroker</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicket.pas">
+            <Form>frmDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormChargeTables.pas">
+            <Form>frmChargeTables</Form>
+        </DCCReference>
+        <DCCReference Include="FormChargeTable.pas">
+            <Form>frmChargeTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormCharges.pas">
+            <Form>frmCharges</Form>
+        </DCCReference>
+        <DCCReference Include="FormCharge.pas">
+            <Form>frmCharge</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommissionList.pas">
+            <Form>frmCommissionList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommission.pas">
+            <Form>frmCommission</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuCommTable.pas">
+            <Form>frmLuCommTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuChargeTable.pas">
+            <Form>frmLuChargeTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealerList.pas">
+            <Form>frmDealerList</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealer.pas">
+            <Form>frmDealer</Form>
+        </DCCReference>
+        <DCCReference Include="FormBranchList.pas">
+            <Form>frmBranchList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBranch.pas">
+            <Form>frmBranch</Form>
+        </DCCReference>
+        <DCCReference Include="FormSalesAgentList.pas">
+            <Form>frmSalesAgentList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSalesAgent.pas">
+            <Form>frmSalesAgent</Form>
+        </DCCReference>
+        <DCCReference Include="FormSalesList.pas">
+            <Form>frmSalesList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSales.pas">
+            <Form>frmSales</Form>
+        </DCCReference>
+        <DCCReference Include="FormDTE.pas">
+            <Form>frmDTE</Form>
+        </DCCReference>
+        <DCCReference Include="FormFiscalYearList.pas">
+            <Form>frmFiscalYearList</Form>
+        </DCCReference>
+        <DCCReference Include="FormFiscalYear.pas">
+            <Form>frmFiscalYear</Form>
+        </DCCReference>
+        <DCCReference Include="FormPeriodList.pas">
+            <Form>frmPeriodList</Form>
+        </DCCReference>
+        <DCCReference Include="FormPeriod.pas">
+            <Form>frmPeriod</Form>
+        </DCCReference>
+        <DCCReference Include="FormContracts.pas">
+            <Form>frmContracts</Form>
+        </DCCReference>
+        <DCCReference Include="FormClientOnBoardingList.pas">
+            <Form>frmClientOnBoardingList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSettlementParam.pas">
+            <Form>frmSettlementParam</Form>
+        </DCCReference>
+        <DCCReference Include="FormProductTypeList.pas">
+            <Form>frmProductTypeist</Form>
+        </DCCReference>
+        <DCCReference Include="FormProductType.pas">
+            <Form>frmProductType</Form>
+        </DCCReference>
+        <DCCReference Include="FormProductList.pas">
+            <Form>frmProductList</Form>
+        </DCCReference>
+        <DCCReference Include="FormProduct.pas">
+            <Form>frmProduct</Form>
+        </DCCReference>
+        <DCCReference Include="FormActLedgerTypeList.pas">
+            <Form>frmActLedgerTypeList</Form>
+        </DCCReference>
+        <DCCReference Include="FormActLedgerType.pas">
+            <Form>frmActLedgerType</Form>
+        </DCCReference>
+        <DCCReference Include="FormActLedgerClassList.pas">
+            <Form>frmActLedgerClassList</Form>
+        </DCCReference>
+        <DCCReference Include="FormActLedgerClass.pas">
+            <Form>frmActLedgerClass</Form>
+        </DCCReference>
+        <DCCReference Include="FormTradingLimitClassList.pas">
+            <Form>frmTradingLimitClassList</Form>
+        </DCCReference>
+        <DCCReference Include="FormTradingLimitClass.pas">
+            <Form>frmTradingLimitClass</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingPrice.pas">
+            <Form>frmClosingPrice</Form>
+        </DCCReference>
+        <DCCReference Include="FormCOAList.pas">
+            <Form>frmCOAList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLAccountGroup.pas">
+            <Form>frmGLAccountGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLAccount.pas">
+            <Form>frmGLAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormExchangeRates.pas">
+            <Form>frmExchangeRates</Form>
+        </DCCReference>
+        <DCCReference Include="FormExchangeRate.pas">
+            <Form>frmExchangeRate</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountList.pas">
+            <Form>frmAccountList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEntityList.pas">
+            <Form>frmEntityList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEntityRet.pas">
+            <Form>frmEntityRet</Form>
+        </DCCReference>
+        <DCCReference Include="FormEntityIns.pas">
+            <Form>frmEntityIns</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompAccountBank.pas">
+            <Form>frmCompAccountBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountInterest.pas">
+            <Form>frmAccountInterest</Form>
+        </DCCReference>
+        <DCCReference Include="FormContract.pas">
+            <Form>frmContract</Form>
+        </DCCReference>
+        <DCCReference Include="DataReport.pas">
+            <Form>dmReport</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormTransLegView.pas">
+            <Form>frmTransLegView</Form>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyStatementProcess.pas">
+            <Form>frmMonthlyStatementProcess</Form>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyStatementProcessEdit.pas">
+            <Form>frmMonthlyStatementProcessEdit</Form>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyStatementClient.pas">
+            <Form>frmMonthlyStatementClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormGenContractItem.pas">
+            <Form>frmGenContractItem</Form>
+        </DCCReference>
+        <DCCReference Include="FormGenContractFile.pas">
+            <Form>frmGenContractFile</Form>
+        </DCCReference>
+        <DCCReference Include="FormOMGMonitor.pas">
+            <Form>frmOMGMonitor</Form>
+        </DCCReference>
+        <DCCReference Include="FormJrnTypeList.pas">
+            <Form>frmJrnTypeList</Form>
+        </DCCReference>
+        <DCCReference Include="FormJrnType.pas">
+            <Form>frmJrnType</Form>
+        </DCCReference>
+        <DCCReference Include="FormCPCenterList.pas">
+            <Form>frmCPCenterList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCPCenter.pas">
+            <Form>frmCPCenter</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalsList.pas">
+            <Form>frmJournalsList</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournal.pas">
+            <Form>frmJournal</Form>
+        </DCCReference>
+        <DCCReference Include="FormEvent.pas">
+            <Form>frmEvent</Form>
+        </DCCReference>
+        <DCCReference Include="FormEventList.pas">
+            <Form>frmEventList</Form>
+        </DCCReference>
+        <DCCReference Include="FormKSEIRequest.pas">
+            <Form>frmKSEIRequest</Form>
+        </DCCReference>
+        <DCCReference Include="FormKSEIUpdateRek.pas">
+            <Form>frmKSEIUpdateSubRek</Form>
+        </DCCReference>
+        <DCCReference Include="FormTrialBalance.pas">
+            <Form>frmTrialBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormContactUsageList.pas">
+            <Form>frmContactUsageList</Form>
+        </DCCReference>
+        <DCCReference Include="FormContactUsage.pas">
+            <Form>frmContactUsage</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettleInstruction.pas">
+            <Form>frmCashSettleInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankReconPostAll.pas">
+            <Form>frmBankReconPostAll</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompanyBankRecons.pas">
+            <Form>frmCompanyBankRecons</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankRecons.pas">
+            <Form>frmBankRecons</Form>
+        </DCCReference>
+        <DCCReference Include="FormClientInquiry.pas">
+            <Form>frmClientInquiry</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDepList.pas">
+            <Form>frmCashDepList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDep.pas">
+            <Form>frmCashDep</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashWdrList.pas">
+            <Form>frmCashWdrList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashWdr.pas">
+            <Form>frmCashWdr</Form>
+        </DCCReference>
+        <DCCReference Include="FormEndOfDay.pas">
+            <Form>frmEndOfDay</Form>
+        </DCCReference>
+        <DCCReference Include="ClassRemoteServer.pas"/>
+        <DCCReference Include="FormARAPAging.pas">
+            <Form>frmARAPAging</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashPosition.pas">
+            <Form>frmCashPosition</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockPosition.pas">
+            <Form>frmStockPosition</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockAging.pas">
+            <Form>frmStockAging</Form>
+        </DCCReference>
+        <DCCReference Include="FormSplitDealTicket.pas">
+            <Form>frmSplitDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormFacilitationDealTicket.pas">
+            <Form>frmFacilitationDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormWarehouseTrade.pas">
+            <Form>frmWarehouseTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormFacilitationTrade.pas">
+            <Form>frmFacilitationTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormCrossTomChoose.pas">
+            <Form>frmCrossTomChoose</Form>
+        </DCCReference>
+        <DCCReference Include="FormCrossTomDealTicket.pas">
+            <Form>frmCrossTomDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormCrossTomTrade.pas">
+            <Form>frmCrossTomTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrowseNoGrid.pas">
+            <Form>frmBrowseNoGrid</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccSuspendList.pas">
+            <Form>frmAccSuspendList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccSuspend.pas">
+            <Form>frmAccSuspend</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyTradeSummary.pas">
+            <Form>frmDailyTradeSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompanyList.pas">
+            <Form>frmCompanyList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompany.pas">
+            <Form>frmCompany</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompanyAccountList.pas">
+            <Form>frmCompanyAccList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBalanceSheet.pas">
+            <Form>frmBalanceSheet</Form>
+        </DCCReference>
+        <DCCReference Include="FormProfitLost.pas">
+            <Form>frmProfitLost</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccLedgerTempList.pas">
+            <Form>frmAccLedgerTempList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccLedgerTemp.pas">
+            <Form>frmAccLedgerTemp</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompAccountHouse.pas">
+            <Form>frmCompAccountHouse</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashFlow.pas">
+            <Form>frmCashFlow</Form>
+        </DCCReference>
+        <DCCReference Include="FormCBestInstruction.pas">
+            <Form>frmCBestInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOList.pas">
+            <Form>frmIPOList</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPO.pas">
+            <Form>frmIPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormInstrumentBond.pas">
+            <Form>frmInstrumentBond</Form>
+        </DCCReference>
+        <DCCReference Include="FormInstrumentBondList.pas">
+            <Form>frmInstrumentBondsList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsDealTicketList.pas">
+            <Form>frmBondsDealTicketList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsDealTicket.pas">
+            <Form>frmBondsDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsClosePriceList.pas">
+            <Form>frmBondsClosePriceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsQuotation.pas">
+            <Form>frmBondsQuotation</Form>
+        </DCCReference>
+        <DCCReference Include="FormFixedAssetGroupList.pas">
+            <Form>frmFixedAssetGroupList</Form>
+        </DCCReference>
+        <DCCReference Include="FormFixedAssetGroup.pas">
+            <Form>frmFixedAssetGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormFixedAssetList.pas">
+            <Form>frmFixedAssetList</Form>
+        </DCCReference>
+        <DCCReference Include="FormFixedAsset.pas">
+            <Form>frmFixedAsset</Form>
+        </DCCReference>
+        <DCCReference Include="FormAssetDepreciationTableList.pas">
+            <Form>frmAssetDepreciationTableList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAssetDepreciationTable.pas">
+            <Form>frmAssetDepreciationTable</Form>
+        </DCCReference>
+        <DCCReference Include="FormFixedAssetDepreciation.pas">
+            <Form>frmFixedAssetDepreciation</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccLedgerBalPosition.pas">
+            <Form>frmAccLedgerBalPosition</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockDepList.pas">
+            <Form>frmStockDepList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockDep.pas">
+            <Form>frmStockDep</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockWdrList.pas">
+            <Form>frmStockWdrList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockWdr.pas">
+            <Form>frmStockWdr</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountCompanyList.pas">
+            <Form>frmAccountCompanyList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReconcileDTE.pas">
+            <Form>frmReconcileDTE</Form>
+        </DCCReference>
+        <DCCReference Include="FormFilterInput.pas">
+            <Form>frmFilterInput</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountCompany.pas">
+            <Form>frmAccountCompany</Form>
+        </DCCReference>
+        <DCCReference Include="FormSettlementInstruction.pas">
+            <Form>frmSettlementInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeNetAmount.pas">
+            <Form>frmChangeNetAmount</Form>
+        </DCCReference>
+        <DCCReference Include="FormEmailConfigList.pas">
+            <Form>frmEmailConfigList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEmailConfig.pas">
+            <Form>frmEmailConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormEmailMonitoring.pas">
+            <Form>frmEmailMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormEmail.pas">
+            <Form>frmEmail</Form>
+        </DCCReference>
+        <DCCReference Include="FormSendMail.pas">
+            <Form>frmSendMail</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettleInstruction.pas">
+            <Form>frmStockSettleInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettle.pas">
+            <Form>frmCashSettle</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettle.pas">
+            <Form>frmStockSettle</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashVoucherList.pas">
+            <Form>frmCashVoucherList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockVoucherList.pas">
+            <Form>frmStockVoucherList</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalList.pas">
+            <Form>frmJournalList</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalVoucher.pas">
+            <Form>frmJournalVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormTrialBalanceByCcy.pas">
+            <Form>frmTrialBalanceByCcy</Form>
+        </DCCReference>
+        <DCCReference Include="FormTrialBalanceConsolidated.pas">
+            <Form>frmTrialBalanceConsolidated</Form>
+        </DCCReference>
+        <DCCReference Include="FormUserActivity.pas">
+            <Form>frmUserActivity</Form>
+        </DCCReference>
+        <DCCReference Include="FormCountryList.pas">
+            <Form>frmCountryList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCountry.pas">
+            <Form>frmCountry</Form>
+        </DCCReference>
+        <DCCReference Include="FormProvinceList.pas">
+            <Form>frmProvinceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormProvince.pas">
+            <Form>frmProvince</Form>
+        </DCCReference>
+        <DCCReference Include="FormCityList.pas">
+            <Form>frmCityList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCity.pas">
+            <Form>frmCity</Form>
+        </DCCReference>
+        <DCCReference Include="FormCustodyList.pas">
+            <Form>frmCustodyList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCustody.pas">
+            <Form>frmCustody</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLAccountActivity.pas">
+            <Form>frmGLAccountActivity</Form>
+        </DCCReference>
+        <DCCReference Include="FormReport.pas">
+            <Form>frmReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSalesActivity.pas">
+            <Form>frmReportSalesActivity</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientActivity.pas">
+            <Form>frmReportClientActivity</Form>
+        </DCCReference>
+        <DCCReference Include="FormReceiptList.pas">
+            <Form>frmReceiptList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCCClassList.pas">
+            <Form>frmCCClassList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCCClass.pas">
+            <Form>frmCCClass</Form>
+        </DCCReference>
+        <DCCReference Include="FormPermissions.pas">
+            <Form>frmPermissions</Form>
+        </DCCReference>
+        <DCCReference Include="FormRDNRequest.pas">
+            <Form>frmRDNRequest</Form>
+        </DCCReference>
+        <DCCReference Include="FormRDNRequests.pas">
+            <Form>frmRDNRequests</Form>
+        </DCCReference>
+        <DCCReference Include="FormViewRDN.pas">
+            <Form>frmViewRDN</Form>
+        </DCCReference>
+        <DCCReference Include="FormViewKSEISubRek.pas">
+            <Form>frmViewKSEISubRek</Form>
+        </DCCReference>
+        <DCCReference Include="FormAssignSales.pas">
+            <Form>frmAssignSales</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccLedgerClassList.pas">
+            <Form>frmAccLedgerClassList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccLedgerClass.pas">
+            <Form>frmAccLedgerClass</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankLink.pas">
+            <Form>frmBankLink</Form>
+        </DCCReference>
+        <DCCReference Include="FormLendBorrowList.pas">
+            <Form>frmLendBorrowList</Form>
+        </DCCReference>
+        <DCCReference Include="FormLendBorrow.pas">
+            <Form>frmLendBorrow</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingProcessList.pas">
+            <Form>frmClosingProcessList</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingProcess.pas">
+            <Form>frmClosingProcess</Form>
+        </DCCReference>
+        <DCCReference Include="FormSettleInstrList.pas">
+            <Form>frmSettleInstrList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSettleInstr.pas">
+            <Form>frmSettleInstr</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccUnSuspendList.pas">
+            <Form>frmAccUnSuspendList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccUnSuspend.pas">
+            <Form>frmAccUnSuspend</Form>
+        </DCCReference>
+        <DCCReference Include="FormHolidayList.pas">
+            <Form>frmHolidayList</Form>
+        </DCCReference>
+        <DCCReference Include="FormHoliday.pas">
+            <Form>frmHoliday</Form>
+        </DCCReference>
+        <DCCReference Include="FormUserMonitoring.pas">
+            <Form>frmUserMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormDataOwnerSetting.pas">
+            <Form>frmDataOwnerSetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormDataGroup.pas">
+            <Form>frmDataGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormAuditLog.pas">
+            <Form>frmAuditLog</Form>
+        </DCCReference>
+        <DCCReference Include="FormUserConfigList.pas">
+            <Form>frmUserConfigList</Form>
+        </DCCReference>
+        <DCCReference Include="FormUserConfig.pas">
+            <Form>frmUserConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDepBankRecon.pas">
+            <Form>frmCashDepBankRecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashMutation.pas">
+            <Form>frmCashMutation</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashMutationList.pas">
+            <Form>frmCashMutationList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLJournalList.pas">
+            <Form>frmGLJournalList</Form>
+        </DCCReference>
+        <DCCReference Include="DataConnector.pas">
+            <Form>dmConnector</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormStockRecon.pas">
+            <Form>frmStockRecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormContractBonds.pas">
+            <Form>frmContractBonds</Form>
+        </DCCReference>
+        <DCCReference Include="FormUserGroupList.pas">
+            <Form>frmUserGroupList</Form>
+        </DCCReference>
+        <DCCReference Include="FormKSEIRDNUpload.pas">
+            <Form>frmKSEIRDNUpload</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompareRDNKSEI.pas">
+            <Form>frmCompareRDNKSEI</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccCreditLimitList.pas">
+            <Form>frmAccCreditLimitList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccCreditLimit.pas">
+            <Form>frmAccCreditLimit</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportFundStatement.pas">
+            <Form>frmReportFundStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyStatement.pas">
+            <Form>frmMonthlyStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormExpiredDocList.pas">
+            <Form>frmExpiredDocList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCTPRecon.pas">
+            <Form>frmCTPRecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsDealTicketContract.pas"/>
+        <DCCReference Include="FormGenerateContractBondsDealTicket.pas">
+            <Form>frmGenerateContractBonds</Form>
+        </DCCReference>
+        <DCCReference Include="FormGeneralLedgerJournal.pas">
+            <Form>frmGeneralLedgerJournal</Form>
+        </DCCReference>
+        <DCCReference Include="FormContractBond.pas">
+            <Form>frmContractBond</Form>
+        </DCCReference>
+        <DCCReference Include="FormCTPReffUpdate.pas">
+            <Form>frmCTPReffUpdate</Form>
+        </DCCReference>
+        <DCCReference Include="FormSimulateQuotation.pas">
+            <Form>frmSimulateQuotation</Form>
+        </DCCReference>
+        <DCCReference Include="FormmCashSettlement.pas">
+            <Form>frmCashSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettement.pas">
+            <Form>frmStockSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FromStockDelRev.pas">
+            <Form>frmStockDeliverList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashProjection.pas">
+            <Form>frmCashProjection</Form>
+        </DCCReference>
+        <DCCReference Include="DataCBest.pas">
+            <Form>dmCBest</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormSplitSettleInstr.pas">
+            <Form>frmSplitSettleInstr</Form>
+        </DCCReference>
+        <DCCReference Include="FormLetterOfConfirmation.pas">
+            <Form>frmLetterOfConfirmation</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsTradeOfConfirmation.pas">
+            <Form>frmBondsTradeConfirmation</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockWithdrawList.pas">
+            <Form>frmReportStockWdrList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashWithdrawList.pas">
+            <Form>frmReportCashWdrList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockPosBySalesAcc.pas">
+            <Form>frmReportStockPosBySalesAcc</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockPosBySalesStock.pas">
+            <Form>frmReportStockBySalesStock</Form>
+        </DCCReference>
+        <DCCReference Include="FormAuthPerson.pas">
+            <Form>frmAuthPerson</Form>
+        </DCCReference>
+        <DCCReference Include="FormAuthPersons.pas">
+            <Form>frmAuthPersons</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportVoucherSummary.pas">
+            <Form>frmReportVoucherSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormARAPSummary.pas">
+            <Form>frmARAPSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormBusinessLineList.pas">
+            <Form>frmBusinessLineList</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalMap.pas">
+            <Form>frmJournalMap</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalMaps.pas">
+            <Form>frmJournalMaps</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashVoucher.pas">
+            <Form>frmRptCashVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTest.pas">
+            <Form>frmReportTest</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLJournalMap.pas">
+            <Form>frmGLJournalMap</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLJournalMaps.pas">
+            <Form>frmGLJournalMaps</Form>
+        </DCCReference>
+        <DCCReference Include="FormIDXTrade.pas">
+            <Form>frmIDXTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormBatchConfigSetting.pas">
+            <Form>frmBatchConfigSetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormBatchAssignGroup.pas">
+            <Form>frmBatchAssignGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormBatchConfigList.pas">
+            <Form>frmBatchConfigList</Form>
+        </DCCReference>
+        <DCCReference Include="FormIDXOrder.pas">
+            <Form>frmIDXOrder</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicketFromIDXOrder.pas">
+            <Form>frmDealTicketFromIDXOrder</Form>
+        </DCCReference>
+        <DCCReference Include="FormBussType.pas">
+            <Form>frmBussType</Form>
+        </DCCReference>
+        <DCCReference Include="FormBussTypes.pas">
+            <Form>frmBussTypes</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccParamClass.pas">
+            <Form>frmAccParamCLass</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccParamClasses.pas">
+            <Form>frmAccParamClasses</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankReceive.pas">
+            <Form>frmRDNReceive</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountStatusList.pas">
+            <Form>frmReportAccountStatusList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportContractDate.pas">
+            <Form>frmReportContractDate</Form>
+        </DCCReference>
+        <DCCReference Include="FormNatureBusinessList.pas">
+            <Form>frmNatureBusinessLine</Form>
+        </DCCReference>
+        <DCCReference Include="FormInternetBankChecking.pas">
+            <Form>frmInternetBankChecking</Form>
+        </DCCReference>
+        <DCCReference Include="FormUserAdministrator.pas">
+            <Form>frmUserAdministrator</Form>
+        </DCCReference>
+        <DCCReference Include="FormGroup.pas">
+            <Form>frmGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormUser.pas">
+            <Form>frmUser</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOBooks.pas">
+            <Form>frmIPOBooks</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOBook.pas">
+            <Form>frmIPOBook</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentsDist.pas">
+            <Form>frmIPOAllotmentsDistribution</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotment.pas">
+            <Form>frmIPOAllotment</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentFromBook.pas">
+            <Form>frmIPOAllotmentFromBook</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPoolingsDistribution.pas">
+            <Form>frmIPOPoolingsDist</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPooling.pas">
+            <Form>frmIPOPooling</Form>
+        </DCCReference>
+        <DCCReference Include="FormBAEList.pas">
+            <Form>frmBAEList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBAE.pas">
+            <Form>frmBAE</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeConfIPO.pas">
+            <Form>frmReportTradeConfIPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormSOPList.pas">
+            <Form>frmSOPList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSOP.pas">
+            <Form>frmSOP</Form>
+        </DCCReference>
+        <DCCReference Include="FormDHK.pas">
+            <Form>frmDHK</Form>
+        </DCCReference>
+        <DCCReference Include="FormSplitAllocDealTicket.pas">
+            <Form>frmSplitAllocDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormDorman.pas">
+            <Form>frmDorman</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpenDormanList.pas">
+            <Form>frmOpenDormanList</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpenDorman.pas">
+            <Form>frmOpenDorman</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccBankGroupByEntity.pas">
+            <Form>frmLuAccBankGroupByEntity</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccCustodyGroupByEntity.pas">
+            <Form>frmLuAccCustodyGroupByEntity</Form>
+        </DCCReference>
+        <DCCReference Include="FormARAPReport.pas">
+            <Form>frmARAPReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpact.pas">
+            <Form>frmCorpAct</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactStockBonus.pas">
+            <Form>frmCorpActStockBonus</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactStockSplit.pas">
+            <Form>frmCorpActStockSplit</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactReverse.pas">
+            <Form>frmCorpactReverse</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactMerge.pas">
+            <Form>frmCorpActMerge</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactMix.pas">
+            <Form>frmCorpActMix</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactStockDividen.pas">
+            <Form>frmCorpActStockDividen</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactCashDividen.pas">
+            <Form>frmCorpActCashDividen</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactHMETD.pas">
+            <Form>frmCorpActHMETD</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactExercise.pas">
+            <Form>frmCorpActExercise</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactExerciseMonitoring.pas">
+            <Form>frmCorpActExerciseMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactList.pas">
+            <Form>frmCorpActList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSOPMember.pas">
+            <Form>frmSOPMember</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankMutation.pas">
+            <Form>frmBankMutation</Form>
+        </DCCReference>
+        <DCCReference Include="FormConSI.pas">
+            <Form>frmConSI</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCInstruction.pas">
+            <Form>frmOTCInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCInstructionSplit.pas">
+            <Form>frmOTCInstructionSplit</Form>
+        </DCCReference>
+        <DCCReference Include="FormPayment.pas">
+            <Form>frmPayment</Form>
+        </DCCReference>
+        <DCCReference Include="FormKSEIAccReconcile.pas">
+            <Form>frmKSEIAccReconcile</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSecuritiesLedgerBalance.pas">
+            <Form>frmReportSecuritiesLedgerBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportFundLedgerBalance.pas">
+            <Form>frmReportFundLedgerBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportFundLedgerJournal.pas">
+            <Form>frmReportFundLedgerJournal</Form>
+        </DCCReference>
+        <DCCReference Include="FormWHTList.pas">
+            <Form>frmWHTList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSalesCommission.pas">
+            <Form>frmReportSalesCommission</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientCommission.pas">
+            <Form>frmReportClientCommission</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettlementList.pas">
+            <Form>frmCashSettlementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientCommissionByRange.pas">
+            <Form>frmReportClientCommissionByRange</Form>
+        </DCCReference>
+        <DCCReference Include="FormDHKs.pas">
+            <Form>frmDHKs</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankPaymentList.pas">
+            <Form>frmBankPaymentList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankReceiveList.pas">
+            <Form>frmBankReceiveList</Form>
+        </DCCReference>
+        <DCCReference Include="FormDHKCash.pas">
+            <Form>frmDHKCash</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateSettlementMSOP.pas">
+            <Form>frmCreateSettlementMSOP</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactEntitlement.pas">
+            <Form>frmCorpActEntitlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactEntitlementMonitoring.pas">
+            <Form>frmCorpActEntitlementMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormHandOverExer.pas">
+            <Form>frmHandOverExer</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDebetCreditNote.pas">
+            <Form>frmCashCreditDebitNote</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDebetCreditNoteList.pas">
+            <Form>frmCashDebetCreditNoteList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEntityCheck.pas">
+            <Form>frmEntityCheck</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactCashHandOver.pas">
+            <Form>frmCorpActCashHandOver</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactCashLoanApproval.pas">
+            <Form>frmCorpactCashLoanApproval</Form>
+        </DCCReference>
+        <DCCReference Include="FormExerciseMonitoring.pas">
+            <Form>frmExerciseMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactExecuteExercise.pas">
+            <Form>frmCorpActExecuteExercise</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactTradeExer.pas">
+            <Form>frmCorpactTradeExercise</Form>
+        </DCCReference>
+        <DCCReference Include="FormDOTList.pas">
+            <Form>frmDOTList</Form>
+        </DCCReference>
+        <DCCReference Include="FormDOT.pas">
+            <Form>frmDOT</Form>
+        </DCCReference>
+        <DCCReference Include="FormSendEmail.pas">
+            <Form>frmSendEmail</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentFinance.pas">
+            <Form>frmIPOAllotmentFinance</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportBalanceSheetReport.pas">
+            <Form>frmBalanceSheetReport</Form>
+        </DCCReference>
+        <DCCReference Include="FromReportTrialBalance.pas">
+            <Form>frmReportTrialBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportProfitLossStatement.pas">
+            <Form>frmReportProfilLossStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormProvisionPortFolioM2M.pas">
+            <Form>frmProvisionPortFolioM2M</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountInterestList.pas">
+            <Form>frmAccountInterestList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccount.pas">
+            <Form>frmAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterestTrackList.pas">
+            <Form>frmInterestTrackList</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterestTrack.pas">
+            <Form>frmInterestTrack</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPoolingFinance.pas">
+            <Form>frmIPOPoolingFinance</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPaymentBAE.pas">
+            <Form>frmIPOPaymentBAE</Form>
+        </DCCReference>
+        <DCCReference Include="FormSplitOTCInstr.pas">
+            <Form>frmSplitOTCInstr</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSecuritiesLedgerJournal.pas">
+            <Form>frmReportSecuritiesLedgerJournal</Form>
+        </DCCReference>
+        <DCCReference Include="FormUploadDataFeedback.pas">
+            <Form>frmUploadDataFeedback</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockMovList.pas">
+            <Form>frmStockMovList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockMov.pas">
+            <Form>frmStockMov</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuStockPos.pas">
+            <Form>frmLuStockPos</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashMovList.pas">
+            <Form>frmCashMovList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashMov.pas">
+            <Form>frmCashMov</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankRefference.pas">
+            <Form>frmBankRefference</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashPaymentBeneficiary.pas">
+            <Form>frmCashPaymentBeneficiary</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuBank.pas">
+            <Form>frmLuBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormCustHaircutList.pas">
+            <Form>frmCustHaircutList</Form>
+        </DCCReference>
+        <DCCReference Include="FormACS.pas">
+            <Form>frmACS</Form>
+        </DCCReference>
+        <DCCReference Include="FormACSList.pas">
+            <Form>frmACSList</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPoolings.pas">
+            <Form>frmIPOPoolings</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotments.pas">
+            <Form>frmIPOAllotments</Form>
+        </DCCReference>
+        <DCCReference Include="FormTenderOfferList.pas">
+            <Form>frmTenderOfferList</Form>
+        </DCCReference>
+        <DCCReference Include="FormTenderOffer.pas">
+            <Form>frmTenderOffer</Form>
+        </DCCReference>
+        <DCCReference Include="FormTenderOfferTrade.pas">
+            <Form>frmTenderOfferTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormTenderOfferTrades.pas">
+            <Form>frmTenderOfferTrades</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradePoolingConfIPO.pas">
+            <Form>frmReportTradePoolingConfIPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountByStockList.pas">
+            <Form>frmAccountByStockList</Form>
+        </DCCReference>
+        <DCCReference Include="HookCreateFrm.pas"/>
+        <DCCReference Include="FormRecallDate.pas">
+            <Form>frmRecallDate</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicketAllocation.pas">
+            <Form>frmDealTicketAllocation</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicketMerge.pas">
+            <Form>frmDealTicketMerge</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTITransList.pas">
+            <Form>frmMTITransList</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTITrans.pas">
+            <Form>frmMTITrans</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTIRecordList.pas">
+            <Form>frmMTIRecordList</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTIRecord.pas">
+            <Form>frmMTIRecord</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTITransRecord.pas">
+            <Form>frmMTITransRecord</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTIConfigList.pas">
+            <Form>frmMTIConfigList</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTIConfig.pas">
+            <Form>frmMTIConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormMTIConfigField.pas">
+            <Form>frmMTIConfigField</Form>
+        </DCCReference>
+        <DCCReference Include="FormOmgeoMonitor.pas">
+            <Form>frmOmgeoMonitor</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountOmgeoList.pas">
+            <Form>frmAccountOmgeoList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccOmgeoConfig.pas">
+            <Form>frmAccOmgeoConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormChackDTERecon.pas">
+            <Form>frmCheckDTERecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormCrossTom.pas">
+            <Form>frmCrossTom</Form>
+        </DCCReference>
+        <DCCReference Include="FormSplitExecDealTicket.pas">
+            <Form>frmSplitExecDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockActivityProfiltLoss.pas">
+            <Form>frmReportStockActivityProfitLoss</Form>
+        </DCCReference>
+        <DCCReference Include="FormTaxInvoiceList.pas">
+            <Form>frmTaxInvoiceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormTaxinvOfficeNoList.pas">
+            <Form>frmTaxInvOfficeNoList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLWithFL.pas">
+            <Form>frmGLWithFL</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLwithBANKRekon.pas">
+            <Form>frmGLWithBankRecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLWithSLRecon.pas">
+            <Form>frmGLWithSLRecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeCalcCommission.pas">
+            <Form>frmChangeCalcCommission</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsMultiDealTicket.pas">
+            <Form>frmBondsMultiDealTicket</Form>
+        </DCCReference>
+        <DCCReference Include="FormSetAllocToOneAccount.pas">
+            <Form>frmSetAllocToOneAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCInstructions.pas">
+            <Form>frmOTCInstructions</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCInstructionNetting.pas">
+            <Form>frmOTCInstructionNetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCInstructionNettingDiff.pas">
+            <Form>frmOTCInstructionNettingDiff</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankMovement.pas">
+            <Form>frmBankMovement</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashVoucher.pas">
+            <Form>frmCashVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormViewCashVoucher.pas">
+            <Form>frmViewCashVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCConfirm.pas">
+            <Form>frmOTCConfirm</Form>
+        </DCCReference>
+        <DCCReference Include="FormCustStockPos.pas">
+            <Form>frmClientStockPos</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicketz.pas">
+            <Form>frmDealTicketz</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashPayment.pas">
+            <Form>frmCashPayment</Form>
+        </DCCReference>
+        <DCCReference Include="FormSOPMovement.pas">
+            <Form>frmSOPMovement</Form>
+        </DCCReference>
+        <DCCReference Include="FormSOPMovList.pas">
+            <Form>frmSOPMovList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockReadyToMove.pas">
+            <Form>frmStockReadyToMove</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactSubAccList.pas">
+            <Form>frmCorpactSubAccList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashCBestInstructionList.pas">
+            <Form>frmCashCBestInstructionList</Form>
+        </DCCReference>
+        <DCCReference Include="FormModifyEntitlement.pas">
+            <Form>frmModifyEntitlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormInstrument.pas">
+            <Form>frmInstrument</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateSettlement.pas">
+            <Form>frmCreateSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashAccountOutstand.pas">
+            <Form>frmCashAccountOutstanding</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankCharge.pas">
+            <Form>frmBankCharges</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateSettlementCashWdr.pas">
+            <Form>frmCreateSettlementCashWdr</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateSettlementPayment.pas">
+            <Form>frmCreateSettlementPayment</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateSettlementReceive.pas">
+            <Form>frmCreateSettlementReceive</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateSettlementCashDep.pas">
+            <Form>frmCreateSettlementCashDep</Form>
+        </DCCReference>
+        <DCCReference Include="FormBatchConfigs.pas">
+            <Form>frmBatchConfigs</Form>
+        </DCCReference>
+        <DCCReference Include="FormSetOff.pas">
+            <Form>frmSetOffList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSetOffDetail.pas">
+            <Form>frmSetOffDetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormInterestTracksList.pas">
+            <Form>frmSelectDataInterest</Form>
+        </DCCReference>
+        <DCCReference Include="SelectDataInterestByAccID.pas">
+            <Form>frmSelectDataInterestByAccID</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankSOPList.pas">
+            <Form>frmBankSOPList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSOPAccBank.pas">
+            <Form>frmSOPAccBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccBankTransaction.pas">
+            <Form>frmReportAccBankTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockPortfolio.pas">
+            <Form>frmReportStockPortfolio</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankMutationCancel.pas">
+            <Form>frmBankMutationCancel</Form>
+        </DCCReference>
+        <DCCReference Include="FormViewMutation.pas">
+            <Form>frmViewMutation</Form>
+        </DCCReference>
+        <DCCReference Include="FormApprovalRequest.pas">
+            <Form>frmApprovalRequest</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrowseBasic.pas">
+            <Form>frmBrowseBasic</Form>
+        </DCCReference>
+        <DCCReference Include="FormEditorBasic.pas">
+            <Form>frmEditorBasic</Form>
+        </DCCReference>
+        <DCCReference Include="FormAuditTrail.pas">
+            <Form>frmAuditTrail</Form>
+        </DCCReference>
+        <DCCReference Include="FormApprovalHistory.pas">
+            <Form>frmApprovalHistory</Form>
+        </DCCReference>
+        <DCCReference Include="FormMyApprovalRequestList.pas">
+            <Form>frmMyApprovalRequestList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportList.pas">
+            <Form>frmReportList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGridReportEditor.pas">
+            <Form>frmGridReportEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FormRTTIPropertyEditor.pas">
+            <Form>frmRTTIPropertyEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FrameGridReport.pas">
+            <Form>frGridReport</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormReportGridList.pas">
+            <Form>frmReportGridList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportGridCategory.pas">
+            <Form>frmReportGridCategory</Form>
+        </DCCReference>
+        <DCCReference Include="FormGridReport.pas">
+            <Form>frmGridReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormCustHaircut.pas">
+            <Form>frmCustHaircut</Form>
+        </DCCReference>
+        <DCCReference Include="FormWorkflowStatus.pas">
+            <Form>frmWorkflowStatus</Form>
+        </DCCReference>
+        <DCCReference Include="FormWorkflow.pas">
+            <Form>frmWorkflow</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningAccount.pas">
+            <Form>frmOpeningAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormRequestKSEIAccount.pas">
+            <Form>frmRequestKSEIAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormRequestRDNAccount.pas">
+            <Form>frmRequestRDNAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningAccountConfig.pas">
+            <Form>frmOpeningAccountConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingAccountList.pas">
+            <Form>frmClosingAccountList</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingAccount.pas">
+            <Form>frmClosingAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountBank.pas">
+            <Form>frmAccountBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccBankNo.pas">
+            <Form>frmAccBankNo</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccBankRelatedAccount.pas">
+            <Form>frmAccBankRelatedAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLTypes.pas">
+            <Form>frmGLTypes</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashPositionMovementList.pas">
+            <Form>frmCashPositionMovementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashPositionMovement.pas">
+            <Form>frmCashPositionMovement</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateCashRecPay.pas">
+            <Form>frmCreateCashRecPay</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountCustody.pas">
+            <Form>frmAccountCustody</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccCustodyNo.pas">
+            <Form>frmAccCustodyNo</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccCustodyRelatedAccount.pas">
+            <Form>frmAccCustodyRelatedAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDormantClient.pas">
+            <Form>frmReportDormantClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientPortofolio.pas">
+            <Form>frmReportClientPortofolio</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockPosByClientAcc.pas">
+            <Form>frmReportStockPosByClientAcc</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrowseNoEdit.pas">
+            <Form>frmBrowseNoEdit</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLInterfaces.pas">
+            <Form>frmGLInterfaces</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAgingMonitoring.pas">
+            <Form>frmReportAgingMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientAccountBalanceSummary.pas">
+            <Form>frmReportClientAccountBalanceSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientDetail.pas">
+            <Form>frmReportClientDetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyTradeByAgent.pas">
+            <Form>frmReportDailyTradeByAgent</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyTradeByClientOrClientType.pas">
+            <Form>frmReportDailyTradeReportClientType</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDetailedPortofolioClient.pas">
+            <Form>frmReportDetailedPortofolioClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginCashAccountBalance.pas">
+            <Form>frmReportMarginCashAccountBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginOutstandingPerShareBorrowing.pas">
+            <Form>frmReportMarginOutstandingPerShareBorrowing</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarketCapitalization.pas">
+            <Form>frmReportMarketCapitalization</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOutstandingForStockMargin.pas">
+            <Form>frmReportOutstandingForStockMargin</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportProductList.pas">
+            <Form>frmReportProductList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSummaryActivityByAgentPerClient.pas">
+            <Form>frmReportSummaryActivityByAgentPerClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalLoanMarginClient.pas">
+            <Form>frmReportTotalLoanMarginClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTop15SingleStockCashClient.pas">
+            <Form>frmReportTop15SingleStockCashClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalOutstandingCashClient.pas">
+            <Form>frmReportTotalOutstandingCashClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalDetailOutstandingShareValue.pas">
+            <Form>frmReportTotalDetailOutstandingShareValue</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalDetailShareCollateral.pas">
+            <Form>frmReportTotalDetailShareCollateral</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalShareValue.pas">
+            <Form>frmReportTotalShareValue</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginAccountSummary.pas">
+            <Form>frmReportMarginAccountSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDetailOutstandingCashClient.pas">
+            <Form>frmReportDetailOutstandingCashClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportExceptional.pas">
+            <Form>frmReportExceptionalReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportForceSelling.pas">
+            <Form>frmReportForceSelling</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDetailOutstandingMarginClient.pas">
+            <Form>frmReportDetailOutstandingMarginClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalDetailOutstandingContraClient.pas">
+            <Form>frmReportTotalDetailOutstandingContraClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportListStockEfek.pas">
+            <Form>frmReportListStockEfek</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginYU.pas">
+            <Form>frmReportMarginYU</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportGroupTypes.pas">
+            <Form>frmReportGroupTypes</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportGroupType.pas">
+            <Form>frmReportGroupType</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTypes.pas">
+            <Form>frmReportTypes</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportType.pas">
+            <Form>frmReportType</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningRepoContract.pas">
+            <Form>frmOpeningRepoContract</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningRepoContractEditor.pas">
+            <Form>frmOpeningRepoContractEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FormLookupAccount.pas">
+            <Form>frmLookupAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormLookUpCIF.pas">
+            <Form>frmLookupCIF</Form>
+        </DCCReference>
+        <DCCReference Include="FormMarginMonitor.pas">
+            <Form>frmMarginMonitor</Form>
+        </DCCReference>
+        <DCCReference Include="FormMarginMonitorDetail.pas">
+            <Form>frmMarginMonitorDetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDefs.pas">
+            <Form>frmReportDefs</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDef.pas">
+            <Form>frmReportDef</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSources.pas">
+            <Form>frmReportSources</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportNTransform.pas">
+            <Form>frmReportNTransform</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateReport.pas">
+            <Form>frmCreateReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormGenerateReportByReportType.pas">
+            <Form>frmGenerateReportByRptType</Form>
+        </DCCReference>
+        <DCCReference Include="FormCheckDifferent.pas">
+            <Form>frmCheckDifferent</Form>
+        </DCCReference>
+        <DCCReference Include="FormMKBDSupportingData.pas">
+            <Form>frmMKBDSupportingData</Form>
+        </DCCReference>
+        <DCCReference Include="FormDataSetOffByAccount.pas">
+            <Form>frmDataSetOffByAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormDataSetOffList.pas">
+            <Form>frmDataSetOffList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGetAccSetOff.pas">
+            <Form>frmGetAccSetOff</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashBalanceAccount.pas">
+            <Form>frmCashBalanceAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockHaircut.pas">
+            <Form>frmStockHaircut</Form>
+        </DCCReference>
+        <DCCReference Include="FormLTHReport.pas">
+            <Form>frmLTHReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormPortfolioDetailsReport.pas">
+            <Form>frmPortfolioDetailsReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSupportingDataMKBD.pas">
+            <Form>frmReportSupportingDataMKBD</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashAccountStatement.pas">
+            <Form>frmReportCashAccountStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStatementOfAccountCSO.pas">
+            <Form>frmReportStatementOfAccountCSO</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportInvestorOpeningAccount.pas">
+            <Form>frmReportInvestorOpeningAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportNotificationToClient.pas">
+            <Form>frmReportNotificationToClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAuditLog.pas">
+            <Form>frmReportAuditLog</Form>
+        </DCCReference>
+        <DCCReference Include="FormREPOMonitor.pas">
+            <Form>frmREPOMonitor</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeCollateralList.pas">
+            <Form>frmChangeCollateralList</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeColList.pas">
+            <Form>frmChangeColList</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeCol.pas">
+            <Form>frmChangeCol</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuContRepo.pas">
+            <Form>frmLuContRepo</Form>
+        </DCCReference>
+        <DCCReference Include="FormBusinessLine.pas">
+            <Form>frmBusinessLine</Form>
+        </DCCReference>
+        <DCCReference Include="FormTaxinvOfficeNo.pas">
+            <Form>frmTaxInvOfficeNo</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportRecommendedTransactionsForSetoffRollOver.pas">
+            <Form>frmReportRecommendedTransactionsForSetoffRollOver</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportInterestPrincipalizedForCashAccount.pas">
+            <Form>frmReportInterestPrincipalizedForCashAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashDividendEntitlementListing.pas">
+            <Form>frmReportCashDividendEntitlementListing</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMonthlyLTAB.pas">
+            <Form>frmReportMonthlyLTAB</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportRepoDailyTrade.pas">
+            <Form>frmReportRepoDailyTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOutstandingTransactionWithSettlementMovement.pas">
+            <Form>frmReportOutstandingTransactionWithSettlementMovement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOutstandingTransactionDueForSettlement.pas">
+            <Form>frmReportOutstandingTransactionDueForSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOutstandingTradesDueForSettlement.pas">
+            <Form>frmReportOutstandingTradesDueForSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashDividendPayment.pas">
+            <Form>frmReportCashDividendPayment</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportConfirmationCorpactDetailReverseStock.pas">
+            <Form>frmReportConfirmationCorpactDetailReverseStock</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyReportOddLotPosition.pas">
+            <Form>frmReportDailyReportOddLotPosition</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTCObligasi.pas">
+            <Form>frmReportTCObligasi</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSummaryObligasi.pas">
+            <Form>frmReportSummaryObligasi</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSettlementInstructionForBondTransaction.pas">
+            <Form>frmReportSettlementInstructionForBondTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportRekapInstruksiDistribusiIPO.pas">
+            <Form>frmReportRekapInstruksiDistribusiIPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSummarySuspenseAccount.pas">
+            <Form>frmReportSummarySuspenseAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockHoldingByAgent.pas">
+            <Form>frmReportStockHoldingByAgent</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockHoldingByStock.pas">
+            <Form>frmReportStockHoldingByStock</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockHoldingByClient.pas">
+            <Form>frmReportStockHoldingByClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportBorrowingFeeReportInternalCSI.pas">
+            <Form>frmReportBorrowingFeeReportInternalCSI</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportBorrowingFeeReportNasabah.pas">
+            <Form>frmReportBorrowingFeeReportNasabah</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportPembayaranSahamIPO.pas">
+            <Form>frmReportPembayaranSahamIPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportReconPortofolioReportUntukIDX.pas">
+            <Form>frmReportReconPortofolioReportUntukIDX</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeListWithCustodianBank.pas">
+            <Form>frmReportTradeListWithCustodianBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportScheduleCorporateAction.pas">
+            <Form>frmReportScheduleCorporateAction</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAnnouncementWarrant.pas">
+            <Form>frmReportAnnouncementWarrant</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportLaporanPendukungVD55.pas">
+            <Form>frmReportLaporanPendukungVD55</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportLaporanKegiatanPerantaraPedagangEfek.pas">
+            <Form>frmReportLaporanKegiatanPerantaraPedagangEfek</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportLaporanPendukungVD57.pas">
+            <Form>frmReportLaporanPendukungVD57</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportBukuPembantuEfekAMT.pas">
+            <Form>frmReportBukuPembantuEfekAMT</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportPendukungDailyTransaction.pas">
+            <Form>frmReportPendukungDailyTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyTransactionReport.pas">
+            <Form>frmReportDailyTransactionReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSafeKeepingFeeStatement.pas">
+            <Form>frmReportSafeKeepingFeeStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportPortfolioAndCashAccountStatement.pas">
+            <Form>frmReportPortfolioAndCashAccountStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportRekapitulasiTransaksiSaham.pas">
+            <Form>frmReportRekapitulasiTransaksiSaham</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCBestAndClientCustodyReconciliation.pas">
+            <Form>frmReportCBestAndClientCustodyReconciliation</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMonthlySafeCustodyStatementOfAccount.pas">
+            <Form>frmReportMonthlySafeCustodyStatementOfAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOutstandingTradesDueForDelivery.pas">
+            <Form>frmReportOutstandingTradesDueForDelivery</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCBestDailyTradeList.pas">
+            <Form>frmReportCBestDailyTradeList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMovementSafeCustody.pas">
+            <Form>frmReportMovementSafeCustody</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportShareBalancesByProduk.pas">
+            <Form>frmReportShareBalancesByProduk</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportShareBalancesByAgent.pas">
+            <Form>frmReportShareBalancesByAgent</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyCommision.pas">
+            <Form>frmReportDailyCommision</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportBOFISDHKmatch.pas">
+            <Form>frmReportBOFISDHKmatch</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashStatement.pas">
+            <Form>frmReportCashStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportLaporanREPOReverseREPO.pas">
+            <Form>frmReportLaporanREPOReverseREPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportShareBalanceWithShareValue.pas">
+            <Form>frmReportShareBalanceWithShareValue</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportRegularSummaryCrossBorderTrades.pas">
+            <Form>frmReportRegularSummaryCrossBorderTrades</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportListOfNewClient.pas">
+            <Form>frmReportListOfNewClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginProduct.pas">
+            <Form>frmReportMarginProduct</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientActivityAndSharesMovement.pas">
+            <Form>frmReportClientActivityAndSharesMovement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportShareBalanceByClient.pas">
+            <Form>frmReportShareBalanceByClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginTPlusFinancingCreditRisk.pas">
+            <Form>frmReportMarginTPlusFinancingCreditRisk</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOSTrxWithSettlementMovement.pas">
+            <Form>frmReportOSTrxWithSettlementMovement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportForecastCombinedACReceivablePayable.pas">
+            <Form>frmReportForecastCombinedACReceivablePayable</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportRegularAccountSummary.pas">
+            <Form>frmReportRegularAccountSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOutstandingRepoDueForSettlement.pas">
+            <Form>frmReportOutstandingRepoDueForSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSingleCounterMargin.pas">
+            <Form>frmReportSingleCounterMargin</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginStatement.pas">
+            <Form>frmReportMarginStatement</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportExposureReport.pas">
+            <Form>frmReportExposureReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginAccountSummaryUSD.pas">
+            <Form>frmReportMarginAccountSummaryUSD</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginAccountSummaryByClient.pas">
+            <Form>frmReportMarginAccountSummaryByClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginAccountSummaryByAgent.pas">
+            <Form>frmReportMarginAccountSummaryByAgent</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCombinedAccountReceivablePayable.pas">
+            <Form>frmReportCombinedAccountReceivablePayable</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCorpactEntitlementListing.pas">
+            <Form>frmReportCorpactEntitlementListing</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientTradeActivityByPurchaseSales.pas">
+            <Form>frmReportClientTradeActivityByPurchaseSales</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAgentRanking.pas">
+            <Form>frmReportAgentRanking</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginMKBD.pas">
+            <Form>frmReportMarginMKBD</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyTradeDetail.pas">
+            <Form>frmReportDailyTradeDetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportValueAddedTax.pas">
+            <Form>frmReportValueAddedTax</Form>
+        </DCCReference>
+        <DCCReference Include="FormGenerateJournalPost.pas">
+            <Form>frmGeneralLedgerJournalPost</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeSettleCcy.pas">
+            <Form>frmChangeSettleCcy</Form>
+        </DCCReference>
+        <DCCReference Include="FormFidessaLimit.pas">
+            <Form>frmFidessaLimit</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyMarketTransaction.pas">
+            <Form>frmDailyMarketTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyCommisionGrid.pas">
+            <Form>frmReportDailyCommisionGrid</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCreditLimitViolation.pas">
+            <Form>frmReportCreditLimitViolation</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportValueAddedTaxGrid.pas">
+            <Form>frmReportValueAddedTaxGrid</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientCommisionList.pas">
+            <Form>frmReportClientCommisionList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTransactionRecapitulation.pas">
+            <Form>frmReportTransactionRecapitulation</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeAccountInterface.pas">
+            <Form>frmReportTradeAccountInterface</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashLedgerBalance.pas">
+            <Form>frmCashLedgerBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockLedgerBalance.pas">
+            <Form>frmStockLedgerBalance</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingPriceList.pas">
+            <Form>frmClosingPriceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyPaymentReceive.pas">
+            <Form>frmReportDailyPaymentReceive</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccountUnderwriter.pas">
+            <Form>frmLuAccountUnderwriter</Form>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyLTAB.pas">
+            <Form>frmMonthlyLTAB</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashTransaction.pas">
+            <Form>frmCashTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettleVoucher.pas">
+            <Form>frmCashSettleVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettleVoucherProcess.pas">
+            <Form>frmCashSettleVoucherProcess</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettlementVoucherList.pas">
+            <Form>frmCashSettlementVoucherList</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuInstrument.pas">
+            <Form>frmLuInstrument</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLType.pas">
+            <Form>frmGLType</Form>
+        </DCCReference>
+        <DCCReference Include="FormContractRepo.pas">
+            <Form>frmContractRepo</Form>
+        </DCCReference>
+        <DCCReference Include="FormREPOSettlement.pas">
+            <Form>frmRepoSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormRenewalRepoContract.pas">
+            <Form>frmRenewalRepoContract</Form>
+        </DCCReference>
+        <DCCReference Include="FormRenewalRepoContractEditor.pas">
+            <Form>frmRenewalRepoContractEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FormRenewalContractRepoList.pas">
+            <Form>frmRenewalContractRepoList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAddAqcPrice.pas">
+            <Form>frmAddHistoricalAcqPrice</Form>
+        </DCCReference>
+        <DCCReference Include="FormBondsMultiDealTicket_View.pas">
+            <Form>frmBondsMultiDealTicket_View</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockByCustomer.pas">
+            <Form>frmStockByCustomer</Form>
+        </DCCReference>
+        <DCCReference Include="FormCustomerByStock.pas">
+            <Form>frmCustomerByStock</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettementList.pas">
+            <Form>frmStockSettlementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormMKBDSupportingReport.pas">
+            <Form>frmMKBDSupportingReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettlementList2.pas">
+            <Form>frmCashSettlementList2</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportBondsDailyTrade.pas">
+            <Form>frmReportBondsDailyTrade</Form>
+        </DCCReference>
+        <DCCReference Include="FormEditAqcPrice.pas">
+            <Form>frmEditAqcPrice</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashDepositList.pas">
+            <Form>frmReportCashDepList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockDepositList.pas">
+            <Form>frmReportStockDepList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientStockActivity.pas">
+            <Form>frmReportClientStockActivity</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettlementVoucherList.pas">
+            <Form>frmStockSettlementVoucherList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettleVoucher.pas">
+            <Form>frmStockSettleVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettleVoucherProcess.pas">
+            <Form>frmStockSettleVoucherProcess</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningAccountHistory.pas">
+            <Form>frmOpeningAccountHistory</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompanyBankList.pas">
+            <Form>frmCompanyBankList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompanyBank.pas">
+            <Form>frmCompanyBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyCashOutstanding.pas">
+            <Form>frmDailyCashOutstanding</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashWdrSubRek.pas">
+            <Form>frmCashWdrSubRek</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyBankInstruction.pas">
+            <Form>frmDailyBankInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormRDNCashDeposit.pas">
+            <Form>frmRDNCashDeposit</Form>
+        </DCCReference>
+        <DCCReference Include="FormRDNCashDepositList.pas">
+            <Form>frmRDNCashDepositList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactExerciseMonitoringSelf.pas">
+            <Form>frmCorpactExerciseMonitoringSelf</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactExerciseWarrant.pas">
+            <Form>frmCorpActWarrantExercise</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactWarrantMonitoring.pas">
+            <Form>frmCorpActWarrantMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateMultipleStockVoucher.pas">
+            <Form>frmCreateMultipleStockVoucher</Form>
+        </DCCReference>
+        <DCCReference Include="FormCreateMultipleStockVoucherList.pas">
+            <Form>frmCreateMultipleStockVoucherList</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentCustody.pas">
+            <Form>frmIPOAllotmentCustody</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentGroup.pas">
+            <Form>frmIPOAllotmentGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentGroupList.pas">
+            <Form>frmIPOAllotmentGroupList</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOAllotmentUpload.pas">
+            <Form>frmIPOAllotmentUpload</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPoolingGroup.pas">
+            <Form>frmIPOPoolingGroup</Form>
+        </DCCReference>
+        <DCCReference Include="FormIPOPoolingGroupList.pas">
+            <Form>frmIPOPoolingGroupList</Form>
+        </DCCReference>
+        <DCCReference Include="FormLendBorrowFeeHis.pas">
+            <Form>frmLendBorrowFeeHis</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountEditor.pas">
+            <Form>frmCustomerEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashBookList.pas">
+            <Form>frmCashBookList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashBook.pas">
+            <Form>frmCashBook</Form>
+        </DCCReference>
+        <DCCReference Include="FormMKBDSupportingReportFilter.pas">
+            <Form>frmMKBDSupportReportFilter</Form>
+        </DCCReference>
+        <DCCReference Include="FormDHKList.pas">
+            <Form>frmDHKList</Form>
+        </DCCReference>
+        <DCCReference Include="FormVD55MonthlySupport.pas">
+            <Form>frmVD55MonthlySupport</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDebetCreditNotesList.pas">
+            <Form>frmCashDebetCreditNotesList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashDebetCreditNotes.pas">
+            <Form>frmCashDebetCreditNotes</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLTypeList.pas">
+            <Form>frmGLTypeList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLType1.pas">
+            <Form>frmGLType1</Form>
+        </DCCReference>
+        <DCCReference Include="FormMKBDVD55Monthly.pas">
+            <Form>frmMKBDVD55Monthly</Form>
+        </DCCReference>
+        <DCCReference Include="FormReferralTypeList.pas">
+            <Form>frmReferralTypeList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReferralType.pas">
+            <Form>frmReferralType</Form>
+        </DCCReference>
+        <DCCReference Include="FormReferralList.pas">
+            <Form>frmReferralList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReferral.pas">
+            <Form>frmReferral</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommShareList.pas">
+            <Form>frmCommShareList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCommShare.pas">
+            <Form>frmCommShare</Form>
+        </DCCReference>
+        <DCCReference Include="FormMulitpleStockSplit.pas">
+            <Form>frmMultipeStockSplit</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettleVoucherList.pas">
+            <Form>frmStockSettleVoucherList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountBalanceSummary.pas">
+            <Form>frmReportClientAccountBalanceSummarys</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientCommisionLists.pas">
+            <Form>frmReportClientCommisionLists</Form>
+        </DCCReference>
+        <DCCReference Include="FormClient2Inquery.pas">
+            <Form>frmClient2Inquery</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockSettleVoucherMultiple.pas">
+            <Form>frmStockSettleVoucherMultiple</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountStatus.pas">
+            <Form>frmReportAccountStatus</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCashStatementList.pas">
+            <Form>frmReportCashStatementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAgingMonitoringList.pas">
+            <Form>frmReportAgingMonitoringList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginAccountSummaryUSDList.pas">
+            <Form>frmReportMarginAccountSummaryOnUSDList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginCashAccountBalanceList.pas">
+            <Form>frmReportMarginCashAccountBalanceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarginAccountSummaryList.pas">
+            <Form>frmReportMarginAccountSummaryList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportListOfProductList.pas">
+            <Form>frmReportListOfProductList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportListStockEfekList.pas">
+            <Form>frmReportListStockEfekList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportExceptionalList.pas">
+            <Form>frmReportExceptionalList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDetailedOutstandNasabahMarginList.pas">
+            <Form>frmReportDetailedOutstandNasabahMarginList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDormantClientList.pas">
+            <Form>frmReportDormanClientList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDetailedOuttandRegularClientRetailList.pas">
+            <Form>frmReportDetailedOuttandRegularClientRetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDetailedPortfolioClientList.pas">
+            <Form>frmReportDetailedPortfolioClientList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportForceSellingList.pas">
+            <Form>frmReportForceSellingList</Form>
+        </DCCReference>
+        <DCCReference Include="FormMarginAlertList.pas">
+            <Form>frmMarginAlertList</Form>
+        </DCCReference>
+        <DCCReference Include="FormVidesaCreditLimitList.pas">
+            <Form>frmVidesaCreditLimitList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMKBDCompare.pas">
+            <Form>frmReportMKBDCompare</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportARAPNettingHistory.pas">
+            <Form>frmReportARAPNettingHistory</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyCashProjection.pas">
+            <Form>frmReportDailyCashProjection</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportSupportMBKDVD5.pas">
+            <Form>frmReportSupportMBKDVD5</Form>
+        </DCCReference>
+        <DCCReference Include="FormVD57Qty.pas">
+            <Form>frmVD57Qty</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCorpactAnno.pas">
+            <Form>frmReportCorpactAnnoList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDOT.pas">
+            <Form>frmReportDOT</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountActiveList.pas">
+            <Form>frmReportAccountActiveList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountClosedList.pas">
+            <Form>frmReportAccountClosedList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountDormanList.pas">
+            <Form>frmReportAccountDormanList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountSuspendList.pas">
+            <Form>frmReportAccountSuspendList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLDetail.pas">
+            <Form>frmGLDetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormLedgerDetail.pas">
+            <Form>frmLedgerDetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormOTCSettlementList.pas">
+            <Form>frmOTCSettlementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStaticDataLog.pas">
+            <Form>frmStaticDataLog</Form>
+        </DCCReference>
+        <DCCReference Include="FormSetQtySplitExec.pas">
+            <Form>frmSetQtySplitExec</Form>
+        </DCCReference>
+        <DCCReference Include="FormEmployeeList.pas">
+            <Form>frmEmployeeList</Form>
+        </DCCReference>
+        <DCCReference Include="FormProjectList.pas">
+            <Form>frmProjectList</Form>
+        </DCCReference>
+        <DCCReference Include="FormProject.pas">
+            <Form>frmProject</Form>
+        </DCCReference>
+        <DCCReference Include="FormEmployee.pas">
+            <Form>frmEmployee</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicketAlloc.pas">
+            <Form>frmDealTicketAlloc</Form>
+        </DCCReference>
+        <DCCReference Include="FormDealTicketAmend.pas">
+            <Form>frmDealTicketAmend</Form>
+        </DCCReference>
+        <DCCReference Include="FormGlobalParamList.pas">
+            <Form>frmGlobalParamList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGlobalParam.pas">
+            <Form>frmGlobalParam</Form>
+        </DCCReference>
+        <DCCReference Include="FormContractSettlementInstruction.pas">
+            <Form>frmContractSettlementInstruction</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccSInvestList.pas">
+            <Form>frmAccSInvestList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccSInvest.pas">
+            <Form>frmAccSInvest</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvProcessList.pas">
+            <Form>frmSInvProcessList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvProcessConf.pas">
+            <Form>frmSInvProcessConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvProcessUploadList.pas">
+            <Form>frmSInvProcessUploadList</Form>
+        </DCCReference>
+        <DCCReference Include="DataSInvest.pas">
+            <Form>dmSInvest</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FormSInvTradeAllocList.pas">
+            <Form>frmSInvTradeAllocList</Form>
+        </DCCReference>
+        <DCCReference Include="FormSettleType.pas">
+            <Form>frmSettleType</Form>
+        </DCCReference>
+        <DCCReference Include="FormPortfolioRevaluationList.pas">
+            <Form>frmPortfolioRevaluationList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGenerateDailyTransReport.pas">
+            <Form>frmGenerateDailyTransReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormNextOfYearProcess.pas">
+            <Form>frmNextOfYearProcess</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangePassword.pas">
+            <Form>frmChangePassword</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalReverse.pas">
+            <Form>frmJournalReverse</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockLedgerList.pas">
+            <Form>frmStockLedgerList</Form>
+        </DCCReference>
+        <DCCReference Include="FormFundLedger.pas">
+            <Form>frmFundLedger</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockLedger.pas">
+            <Form>frmStockLedger</Form>
+        </DCCReference>
+        <DCCReference Include="FormFundLedgerList.pas">
+            <Form>frmFundLedgerList</Form>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyTransactionReport.pas">
+            <Form>frmMonthlyTransactionReport</Form>
+        </DCCReference>
+        <DCCReference Include="FormProcessWait.pas">
+            <Form>frmProcessWait</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMonthlyTax.pas">
+            <Form>frmReportMonthlyTax</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMonthlyTaxSummary.pas">
+            <Form>frmMonthlyTaxSummary</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTotalTransaction.pas">
+            <Form>frmReportTotalTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportOpeningAccountByDate.pas">
+            <Form>frmReportOpeningAccountByDate</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountPosByStock.pas">
+            <Form>frmReportAccountPosByStock</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockPosByAccount.pas">
+            <Form>frmReportStockPosByAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientActivityInsReg.pas">
+            <Form>frmReportClientActivityInsReg</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportClientActivityOLNonOL.pas">
+            <Form>frmReportClientActivityOLNonOL</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportAccountAging.pas">
+            <Form>frmReportAccountAging</Form>
+        </DCCReference>
+        <DCCReference Include="FormRDNBankReconList.pas">
+            <Form>frmRDNBankReconList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashSettlementT4.pas">
+            <Form>frmCashSettlementT4</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeTransaction.pas">
+            <Form>frmReportTradeTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormVD510Static.pas">
+            <Form>frmVD510Static</Form>
+        </DCCReference>
+        <DCCReference Include="FormVD510Config.pas">
+            <Form>frmVD510Config</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCustomersData.pas">
+            <Form>frmReportCustomersData</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportCustomersDataList.pas">
+            <Form>frmReportCustomerDataList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStatementOfAccount.pas">
+            <Form>frmReportStatementOfAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountDormanList.pas">
+            <Form>frmAccountDormanList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountDorman.pas">
+            <Form>frmAccountDorman</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccountExisting.pas">
+            <Form>frmLuAccountExisting</Form>
+        </DCCReference>
+        <DCCReference Include="FormAccountDormanUpdate.pas">
+            <Form>frmAccountDormanUpdate</Form>
+        </DCCReference>
+        <DCCReference Include="FormOccupationList.pas">
+            <Form>frmOccupationList</Form>
+        </DCCReference>
+        <DCCReference Include="FormOccupation.pas">
+            <Form>frmOccupation</Form>
+        </DCCReference>
+        <DCCReference Include="FormEBlastCustomerList.pas">
+            <Form>frmEBlastCustomerList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEBlast.pas">
+            <Form>frmEBlast</Form>
+        </DCCReference>
+        <DCCReference Include="FormEBlastList.pas">
+            <Form>frmEBlastList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEBlastCustomers.pas">
+            <Form>frmEBlastCustomers</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningAccountRetailSB.pas">
+            <Form>frmOpeningAccountRetailSB</Form>
+        </DCCReference>
+        <DCCReference Include="FormOpeningAccountRetail.pas">
+            <Form>frmOpeningAccountRetail</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactEntitlementList.pas">
+            <Form>frmCorpactEntitlementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCorpactExerciseList.pas">
+            <Form>frmCorpactExerciseList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCOAConfigList.pas">
+            <Form>frmCOAConfigList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCOAConfig.pas">
+            <Form>frmCOAConfig</Form>
+        </DCCReference>
+        <DCCReference Include="FormDetailARAPNetting.pas">
+            <Form>frmDetailARAPNetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockMovProgramList.pas">
+            <Form>frmStockMovementProgramList</Form>
+        </DCCReference>
+        <DCCReference Include="FormStockMovProgram.pas">
+            <Form>frmStockMovementProgram</Form>
+        </DCCReference>
+        <DCCReference Include="FormLoading.pas">
+            <Form>frmLoading</Form>
+        </DCCReference>
+        <DCCReference Include="FormCompareCashBalancePosition.pas">
+            <Form>frmCompareCashBalancePosition</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTrialBalanceStock.pas">
+            <Form>frmReportTrialBalanceStock</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLClient.pas">
+            <Form>frmGLClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTrialBalanceClient.pas">
+            <Form>frmReportTrialBalanceClient</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportARAPNetting.pas">
+            <Form>frmReportARAPNetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportStockShortSell.pas">
+            <Form>frmReportStockShortSell</Form>
+        </DCCReference>
+        <DCCReference Include="FormReconcileBOFIS.pas">
+            <Form>frmReconcileBOFIS</Form>
+        </DCCReference>
+        <DCCReference Include="FormReveiceEmailList.pas">
+            <Form>frmReceiveEmailList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReceiveEmail.pas">
+            <Form>frmReceiveEmail</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeConfirmation.pas">
+            <Form>frmReportTradeConfirmation</Form>
+        </DCCReference>
+        <DCCReference Include="FormLPPE.pas">
+            <Form>frmLPPE</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeTransactionList.pas">
+            <Form>frmReportTradeTransactionList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEIPOAllotmentList.pas">
+            <Form>frmEIPOAllotmentList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTradeTransactionNew.pas">
+            <Form>frmReportTradeTransactionNew</Form>
+        </DCCReference>
+        <DCCReference Include="FormEIPOPenjatahan.pas">
+            <Form>frmEIPOAlloted</Form>
+        </DCCReference>
+        <DCCReference Include="FormEIPOList.pas">
+            <Form>frmEIPOList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEIPO.pas">
+            <Form>frmEIPO</Form>
+        </DCCReference>
+        <DCCReference Include="FormInputJurnalBankList.pas">
+            <Form>frmInputJurnalBankList</Form>
+        </DCCReference>
+        <DCCReference Include="FormInputJurnalBank.pas">
+            <Form>frmInputJurnalBank</Form>
+        </DCCReference>
+        <DCCReference Include="FormPleaseWait.pas">
+            <Form>frmPlaseWait</Form>
+        </DCCReference>
+        <DCCReference Include="FormBrowseData.pas">
+            <Form>frmBrowseData</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalInputList.pas">
+            <Form>frmJournalInputList</Form>
+        </DCCReference>
+        <DCCReference Include="FormJournalInput.pas">
+            <Form>frmJournalInput</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccounts.pas">
+            <Form>frmLuAccounts</Form>
+        </DCCReference>
+        <DCCReference Include="FormRecalculateRoundDialog.pas">
+            <Form>frmRecalculateRoundDialog</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvestRecon.pas">
+            <Form>frmSInvestRecon</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeCommissionChannel.pas">
+            <Form>frmChangeCommissionChannel</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvestReconTC.pas">
+            <Form>frmSInvestReconTC</Form>
+        </DCCReference>
+        <DCCReference Include="Lib\App.Global.Info.pas"/>
+        <DCCReference Include="Lib\DataModel.SplashController.pas"/>
+        <DCCReference Include="Lib\Model.Downloader.pas"/>
+        <DCCReference Include="Lib\NAutoUpdateHttp.pas"/>
+        <DCCReference Include="Lib\sevenzip.pas"/>
+        <DCCReference Include="Lib\SplashCommUtils.pas"/>
+        <DCCReference Include="Splash\FormSplashBase.pas">
+            <Form>frmSplashBase</Form>
+        </DCCReference>
+        <DCCReference Include="Splash\FormNewSplash.pas">
+            <Form>frmNewSplash</Form>
+        </DCCReference>
+        <DCCReference Include="FormFacilitationBoard.pas">
+            <Form>frmFacilitationBoard</Form>
+        </DCCReference>
+        <DCCReference Include="FormProcessUpdate.pas">
+            <Form>frmProcessUpdate</Form>
+        </DCCReference>
+        <DCCReference Include="FormSplitDealtcketByQty.pas">
+            <Form>frmSplitDealticketByQty</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvestMonitoringList.pas">
+            <Form>frmSInvestMonitoringList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportTCContract.pas">
+            <Form>frmReportTCContract</Form>
+        </DCCReference>
+        <DCCReference Include="FormEditAmountOmgeoContract.pas">
+            <Form>frmEditAmountOmgeoContract</Form>
+        </DCCReference>
+        <DCCReference Include="FormUpdateContract.pas">
+            <Form>frmUpdateContract</Form>
+        </DCCReference>
+        <DCCReference Include="FormChangeCommission.pas">
+            <Form>frmChangeCommission</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccount.pas">
+            <Form>frmLuAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormSlikInterfaceList.pas">
+            <Form>frmSlikInterfaceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormGLInterfaceList.pas">
+            <Form>frmGLInterfaceList</Form>
+        </DCCReference>
+        <DCCReference Include="FormEODProcess.pas">
+            <Form>frmEODProcess</Form>
+        </DCCReference>
+        <DCCReference Include="FormSInvestAutoSplitList.pas">
+            <Form>frmSInvestAutoSplitList</Form>
+        </DCCReference>
+        <DCCReference Include="FormVD5Config.pas">
+            <Form>frmVD5Configs</Form>
+        </DCCReference>
+        <DCCReference Include="FormVD5ConfigEditor.pas">
+            <Form>frmVD5ConfigEditor</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyInterestOutsList.pas">
+            <Form>frmDailyInterestOutsList</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyInterestOutsChangeInteresRate.pas">
+            <Form>frmDailyInteresOutsChangeInterestRate</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyInterestOutsPenaltyWave.pas">
+            <Form>frmDailyInterestOutsPenaltyWave</Form>
+        </DCCReference>
+        <DCCReference Include="FormInvoiceInterestList.pas">
+            <Form>frmInvoiceInterestList</Form>
+        </DCCReference>
+        <DCCReference Include="FormWaveInterestPenaltyList.pas">
+            <Form>frmWaveInterestPenaltyList</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportUnusualMarketVol.pas">
+            <Form>frmReportUnusualMarketVol</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportMarkingTheClose.pas">
+            <Form>frmReportMarkingTheClose</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportFrontRunning.pas">
+            <Form>frmReportFrontRunning</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportFakeDemand.pas">
+            <Form>frmReportFakeDemand</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportWashSale.pas">
+            <Form>frmReportWashSale</Form>
+        </DCCReference>
+        <DCCReference Include="FormSurvailanceSetting.pas">
+            <Form>frmSurvailanceSetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormPtbFakeDemandSupply.pas">
+            <Form>frmPtbFakeDemand</Form>
+        </DCCReference>
+        <DCCReference Include="FormPtbFrontRunning.pas">
+            <Form>frmPtbFrontRunning</Form>
+        </DCCReference>
+        <DCCReference Include="FormPtbMarkingTheClose.pas">
+            <Form>frmPtbMarkingTheClose</Form>
+        </DCCReference>
+        <DCCReference Include="FormPtbUnusualMarketVol.pas">
+            <Form>frmPtbUnusualMarketVol</Form>
+        </DCCReference>
+        <DCCReference Include="FormPTBWashSale.pas">
+            <Form>frmPtbWashSale</Form>
+        </DCCReference>
+        <DCCReference Include="FormReportDailyInterestActivity.pas">
+            <Form>frmReportDailyInterestActivity</Form>
+        </DCCReference>
+        <DCCReference Include="FormLuAccountList.pas">
+            <Form>frmLuAccountList</Form>
+        </DCCReference>
+        <DCCReference Include="FormCashWithdraw.pas">
+            <Form>frmCashWithdraw</Form>
+        </DCCReference>
+        <DCCReference Include="FormDailyInstructionList.pas">
+            <Form>frmDailyInstructionList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAlternateCashSettlementList.pas">
+            <Form>frmAlternateCashSettlementList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAlternateCashSettlement.pas">
+            <Form>frmAlternateCashSettlement</Form>
+        </DCCReference>
+        <DCCReference Include="FormViewTransaction.pas">
+            <Form>frmViewTransaction</Form>
+        </DCCReference>
+        <DCCReference Include="FormTodoList.pas">
+            <Form>frmTodoList</Form>
+        </DCCReference>
+        <DCCReference Include="FormAMLConditionParameter.pas">
+            <Form>frmAMLConditionParameter</Form>
+        </DCCReference>
+        <DCCReference Include="FormAMLSetting.pas">
+            <Form>frmAMLSetting</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankCompanyList.pas">
+            <Form>frmBankCompanyList</Form>
+        </DCCReference>
+        <DCCReference Include="FormBankCompany.pas">
+            <Form>frmBankCompany</Form>
+        </DCCReference>
+        <DCCReference Include="FormVerdhanaOMSInsti.pas">
+            <Form>frmVerdhanaOMSInsti</Form>
+        </DCCReference>
+        <DCCReference Include="FormAmlAccount.pas">
+            <Form>frmAMLAccount</Form>
+        </DCCReference>
+        <DCCReference Include="FormGenerateAMLDataReport.pas">
+            <Form>frmGenerateAMLDataReport</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormGenerateAMLDataReportHis.pas">
+            <Form>frmGenerateAMLDataReportHis</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormAMLSummary.pas">
+            <Form>frmAMLSummary</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormAmlAccountList.pas">
+            <Form>frmAmlAccountList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormEMateraiMonitoringList.pas">
+            <Form>frmEMateraiMonitoringList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormEMateraiConfig.pas">
+            <Form>frmEMateraiConfig</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormCompanyCustodyList.pas">
+            <Form>frmCompanyCustodyList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormCompanyCustody.pas">
+            <Form>frmCompanyCustody</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormOpeningAccountIns.pas">
+            <Form>frmOpeningAccountIns</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormMonthlyXE13Report.pas">
+            <Form>frmMonthlyXE13Report</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormDepositoBankList.pas">
+            <Form>frmDepositoBankList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormDepositoBank.pas">
+            <Form>frmDepositoBank</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormACTReconcile.pas">
+            <Form>frmACTReconcile</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormDepositoList.pas">
+            <Form>frmDepositoList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormDeposito.pas">
+            <Form>frmDeposito</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormIDXMonthlyTransactionReport.pas">
+            <Form>frmIDXTransactionReport</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormReportVD51_2.pas">
+            <Form>frmReportVD51_2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormReportIDXClearingResult.pas">
+            <Form>frmReportIDXClearingResult</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormReportMonthlyStamp.pas">
+            <Form>frmReportMonthlyStamp</Form>
+        </DCCReference>
+        <DCCReference Include="FormClosingPriceEdit.pas">
+            <Form>frmClosingPriceEit</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormReksdanaList.pas">
+            <Form>frmReksadanaList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormReksadana.pas">
+            <Form>frmReksadana</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormInboxRDNReconcile.pas">
+            <Form>frmInboxRDNRecon</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">NayagaClient.dpr</Source>
+                </Source>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\IcsVclD110Design.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\IcsVclD110Design.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\IcsFmxD110Design.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\IcsFmxD110Design.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\IcsCommonD110Design.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\IcsCommonD110Design.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <DataSnapProxyLookup>
+                <ClassRemoteServer>{8FB1863B-23B2-403D-B067-0C5519D4C0D0}</ClassRemoteServer>
+            </DataSnapProxyLookup>
+            <ModelSupport>False</ModelSupport>
+            <Deployment Version="3">
+                <DeployFile LocalName="Output\Win32\NayagaClient.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Output\Win32\NayagaClient.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>NayagaClient.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Output\Win32\NayagaClient.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Output\Win32\NayagaClient.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>NayagaClient.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon192">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iOS_AppStore1024">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon152">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon167">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_SpotLight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon180">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification60">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting87">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSLaunchScreen">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>
