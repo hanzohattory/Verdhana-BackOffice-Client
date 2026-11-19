@@ -1,6 +1,6 @@
 //
 // Created by the DataSnap proxy generator.
-// 11/11/2026 5:42:43 PM
+// 11/18/2026 4:07:34 PM
 //
 
 unit ClassRemoteServer;
@@ -514,6 +514,7 @@ type
     FReksadanaDepositoCancelCommand: TDBXCommand;
     FReksadanaDepositoCloseCommand: TDBXCommand;
     FSetEODSupportPdfStatusCommand: TDBXCommand;
+    FFileNameUploadedCommand: TDBXCommand;
   public
     constructor Create(ADBXConnection: TDBXConnection); overload;
     constructor Create(ADBXConnection: TDBXConnection; AInstanceOwner: Boolean); overload;
@@ -1019,6 +1020,7 @@ type
     function ReksadanaDepositoCancel(ADepoitoID: Integer; ANotes: string; out AMsg: string): Boolean;
     function ReksadanaDepositoClose(ADepoitoID: Integer; out AMsg: string): Boolean;
     function SetEODSupportPdfStatus(AReportDate: string; ANo: Integer; AStatus: string; AMsg: string): string;
+    function FileNameUploaded(AFileName: string; out AMsg: string): Boolean;
   end;
 
 implementation
@@ -9014,6 +9016,21 @@ begin
   Result := FSetEODSupportPdfStatusCommand.Parameters[4].Value.GetWideString;
 end;
 
+function TSessionServerModuleClient.FileNameUploaded(AFileName: string; out AMsg: string): Boolean;
+begin
+  if FFileNameUploadedCommand = nil then
+  begin
+    FFileNameUploadedCommand := FDBXConnection.CreateCommand;
+    FFileNameUploadedCommand.CommandType := TDBXCommandTypes.DSServerMethod;
+    FFileNameUploadedCommand.Text := 'TSessionServerModule.FileNameUploaded';
+    FFileNameUploadedCommand.Prepare;
+  end;
+  FFileNameUploadedCommand.Parameters[0].Value.SetWideString(AFileName);
+  FFileNameUploadedCommand.ExecuteUpdate;
+  AMsg := FFileNameUploadedCommand.Parameters[1].Value.GetWideString;
+  Result := FFileNameUploadedCommand.Parameters[2].Value.GetBoolean;
+end;
+
 constructor TSessionServerModuleClient.Create(ADBXConnection: TDBXConnection);
 begin
   inherited Create(ADBXConnection);
@@ -9528,6 +9545,7 @@ begin
   FReksadanaDepositoCancelCommand.DisposeOf;
   FReksadanaDepositoCloseCommand.DisposeOf;
   FSetEODSupportPdfStatusCommand.DisposeOf;
+  FFileNameUploadedCommand.DisposeOf;
   inherited;
 end;
 

@@ -18,7 +18,7 @@ uses
   cxPropertiesStore, NActionPermission, cxGridLevel, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridBandedTableView, DateUtils,
   cxGridDBBandedTableView, cxGrid, cxSplitter, Datasnap.DBClient, NClientDataset,
-  ComObj, cxImageComboBox;
+  ComObj, cxImageComboBox, dxLayoutContainer, dxLayoutControl;
 
 type
   TfrmVerdhanaOMSInsti = class(TfrmBrowseData)
@@ -258,19 +258,19 @@ var
   dtTradeOrder: TDateTime;
   sBrokerID: string;
 begin
-  try
-    sFileName := '';
-    if OpenDialog.Execute then
+  sFileName := '';
+  if OpenDialog.Execute then
+  begin
+    sFileName := OpenDialog.FileName;
+
+    if sFileName = '' then
     begin
-      sFileName := OpenDialog.FileName;
-
-      if sFileName = '' then
-      begin
-        MessageInformation('Please choose the file to be uploaded !');
-        exit;
-      end;
+      MessageInformation('Please choose the file to be uploaded !');
+      exit;
     end;
+  end;
 
+  try
     dtTradeOrder := VarToDateTime(dtOrder.EditValue);
 
     cdsVerdhanaOrderList.DisableControls;
@@ -393,6 +393,12 @@ begin
     if sFileName = '' then
     begin
       MessageInformation('Please choose the file to be uploaded !');
+      exit;
+    end;
+
+    if dmGlobal.RemoteServer.FileNameUploaded(sFileName, sMsg) then
+    begin
+      MessageError(sMsg);
       exit;
     end;
 

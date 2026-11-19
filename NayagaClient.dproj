@@ -108,8 +108,8 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <BT_BuildType>Debug</BT_BuildType>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
-        <VerInfo_Keys>CompanyName=PT Kalacakra Teknologi;FileDescription=Nayaga Client Application;FileVersion=1.0.0.165;InternalName=;LegalCopyright=Copyright © 2017-2019 Cakra-Tech;LegalTrademarks=;OriginalFilename=;ProductName=Nayaga i-Banking System;ProductVersion=1.0;Comments=</VerInfo_Keys>
-        <VerInfo_Build>165</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=PT Kalacakra Teknologi;FileDescription=Nayaga Client Application;FileVersion=1.0.0.166;InternalName=;LegalCopyright=Copyright © 2017-2019 Cakra-Tech;LegalTrademarks=;OriginalFilename=;ProductName=Nayaga i-Banking System;ProductVersion=1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>166</VerInfo_Build>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>

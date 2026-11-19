@@ -306,7 +306,7 @@ inherited frmVerdhanaOMSInsti: TfrmVerdhanaOMSInsti
     Width = 946
     Height = 8
     HotZoneClassName = 'TcxSimpleStyle'
-    Control = cxGrid1
+    ExplicitTop = 329
   end
   object cxGrid2: TcxGrid [3]
     Left = 0
@@ -746,7 +746,7 @@ inherited frmVerdhanaOMSInsti: TfrmVerdhanaOMSInsti
   end
   object PopupMenu: TPopupMenu
     Left = 392
-    Top = 480
+    Top = 488
     object UploadTradeExecution1: TMenuItem
       Action = actUploadExec
     end
