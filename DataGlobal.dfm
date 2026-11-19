@@ -15,7 +15,7 @@ object dmGlobal: TdmGlobal
         '.Data.DbxClientDriver,Version=16.0.0.0,Culture=neutral,PublicKey' +
         'Token=91d62ebb5b0d1b1b'
       'drivername=DataSnap'
-      'HostName=172.16.0.137'
+      'HostName=127.0.0.1'
       'Port=8299'
       'CommunicationProtocol=tcp/ip'
       'dsauthenticationuser=admin'
